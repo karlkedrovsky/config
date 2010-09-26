@@ -1,15 +1,29 @@
+filetype off
 call pathogen#runtime_append_all_bundles() 
 call pathogen#helptags()
 
+" General settings
 set nocompatible
 set bg=dark
 syntax on
+filetype plugin indent on
 set title
 set incsearch
+set hlsearch
+set ignorecase
+set smartcase
 set nowrap
-
+set history=1000
+set backspace=indent,eol,start
 colorscheme blackboard
 
+" Backup files
+set backup
+set backupdir=$HOME/.vimbackup
+set directory=$HOME/.vimswap
+set viewdir=$HOME/.vimviews
+
+" Tags and indentation
 set expandtab
 set tabstop=2
 set softtabstop=2
@@ -17,6 +31,7 @@ set shiftwidth=2
 set autoindent
 set smartindent
 
+" Customizations for specific file types
 if has("autocmd")
   " Drupal *.module and *.install files.
   augroup module
@@ -27,5 +42,6 @@ if has("autocmd")
   augroup END
 endif
 
+" Key bindings
 map <F2> :NERDTreeToggle<CR>
 
