@@ -37,8 +37,8 @@ for a new set up.
 
 Adding a new submodule.
 
-   cd ~/Dropbox/home
-   git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
-   git add .
-   git commit -m "Install Fugitive.vim bundle as a submodule."
+    cd ~/Dropbox/home
+    git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
+    git add .
+    git commit -m "Install Fugitive.vim bundle as a submodule."
 
