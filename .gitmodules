@@ -22,3 +22,6 @@
 [submodule "vim/bundle/jellybeans"]
 	path = vim/bundle/jellybeans
 	url = http://github.com/nanotech/jellybeans.vim.git
+[submodule "vim/bundle/blackboard"]
+	path = vim/bundle/blackboard
+	url = http://github.com/bwyrosdick/vim-blackboard.git
