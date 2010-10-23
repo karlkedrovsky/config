@@ -19,3 +19,6 @@
 [submodule "vim/bundle/tcomment"]
 	path = vim/bundle/tcomment
 	url = http://github.com/tomtom/tcomment_vim.git
+[submodule "vim/bundle/jellybeans"]
+	path = vim/bundle/jellybeans
+	url = http://github.com/nanotech/jellybeans.vim.git
