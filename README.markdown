@@ -21,7 +21,7 @@ http://github.com/nelstrom/dotfiles.
 
 If you're not using Dropbox do the following to get the submodules.
 
-    cd dotfiles
+    cd config
     git submodule init
     git submodule update
 
@@ -34,4 +34,11 @@ for a new set up.
     mkdir ~/.vimbackup
     mkdir ~/.vimswap
     mkdir ~/.vimviews
+
+Adding a new submodule.
+
+   cd ~/Dropbox/home
+   git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
+   git add .
+   git commit -m "Install Fugitive.vim bundle as a submodule."
 
