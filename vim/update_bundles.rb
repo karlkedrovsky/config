@@ -12,6 +12,7 @@ git_bundles = [
   "git://github.com/tpope/vim-vividchalk.git",
   "git://github.com/nanotech/jellybeans.vim.git",
   "git://github.com/bwyrosdick/vim-blackboard.git",
+  "git://github.com/vim-scripts/vimwiki.git",
 ]
 
 require 'fileutils'

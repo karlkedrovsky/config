@@ -15,6 +15,7 @@ set smartcase
 set nowrap
 set history=1000
 set backspace=indent,eol,start
+set number
 colorscheme blackboard
 
 " Backup files
@@ -41,6 +42,8 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.inc set filetype=php
   augroup END
 endif
+
+" Vimwiki
 
 " Key bindings
 map <F2> :NERDTreeToggle<CR>
