@@ -1,6 +1,8 @@
 filetype off
 call pathogen#runtime_append_all_bundles() 
-call pathogen#helptags()
+" tcomment has a bug in the docs that makes helptags complain.
+" uncomment this when it's fixed.
+" call pathogen#helptags()
 
 " General settings
 set nocompatible
@@ -16,6 +18,7 @@ set nowrap
 set history=1000
 set backspace=indent,eol,start
 set number
+set ruler
 colorscheme blackboard
 
 " Backup files
