@@ -19,6 +19,7 @@ set history=1000
 set backspace=indent,eol,start
 set number
 set ruler
+set wildmode=longest,list
 colorscheme blackboard
 
 " Backup files
