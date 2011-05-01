@@ -28,9 +28,9 @@ If you're not using Dropbox do the following to get the submodules.
 After syncing through Dropbox (or cloning the git repository) run the following
 for a new set up.
 
-    ls -s ~/Dropbox/home/vimrc ~/.vimrc
-    ls -s ~/Dropbox/home/vim ~/.vim
-    ls -s ~/Dropbox/home/gvimrc ~/.gvimrc
+    ln -s ~/Dropbox/home/vimrc ~/.vimrc
+    ln -s ~/Dropbox/home/vim ~/.vim
+    ln -s ~/Dropbox/home/gvimrc ~/.gvimrc
     mkdir ~/.vimbackup
     mkdir ~/.vimswap
     mkdir ~/.vimviews
