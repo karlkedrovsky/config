@@ -1,0 +1,4 @@
+# colors for ls, etc.
+alias ls="ls -G"
+alias ll="ls -Gl"
+

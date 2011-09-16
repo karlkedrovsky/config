@@ -30,10 +30,6 @@ set b 0 0 0
 # use vi key bindings
 set -o vi
 
-# colors for ls, etc.
-alias ls="ls -G"
-alias ll="ls -Gl"
-
 # account/host specific aliases
 if [[ -e $HOME/.aliases ]]; then
     . $HOME/.aliases
