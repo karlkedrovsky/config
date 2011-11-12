@@ -42,3 +42,14 @@ Adding a new submodule.
     git add .
     git commit -m "Install Fugitive.vim bundle as a submodule."
 
+Zsh Config
+==========
+
+For my zsh config I'm using Robby Russell's
+[oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework. To set it up
+just clone the repository from github in your home directory:
+
+    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+My .zshrc file is already set up to use this but if you want to use your own
+just follow the instructions in the oh-my-zsh README file.
