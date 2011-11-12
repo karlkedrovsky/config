@@ -20,6 +20,7 @@ set backspace=indent,eol,start
 set number
 set ruler
 set wildmode=longest,list
+set clipboard=unnamed
 colorscheme blackboard
 
 " Backup files

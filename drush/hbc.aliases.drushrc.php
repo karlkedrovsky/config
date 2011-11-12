@@ -11,6 +11,7 @@ $aliases['prod'] = array(
   'root' => '/var/www/harvestbaptistks/htdocs',
   'remote-host' => 'harvestbaptistks.org',
   'remote-user' => 'karl',
+  'dump-dir' => '/home/karl/drush-dump-dir',
   'path-aliases' => array(
     '%files' => 'sites/default/files',
   ),
