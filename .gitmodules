@@ -18,15 +18,12 @@
 	path = vim/bundle/surround
 	url = http://github.com/tpope/vim-surround.git
   ignore = dirty
-[submodule "vividchalk"]
-	path = vividchalk
+[submodule "vim/bundle/vividchalk"]
+	path = vim/bundle/vividchalk
 	url = http://github.com/tpope/vim-vividchalk.git
-  ignore = dirty
-[submodule "tcomment"]
-	path = tcomment
+[submodule "vim/bundle/tcomment"]
+	path = vim/bundle/tcomment
 	url = http://github.com/tomtom/tcomment_vim.git
-  ignore = dirty
-[submodule "blackboard"]
-	path = blackboard
+[submodule "vim/bundle/blackboard"]
+	path = vim/bundle/blackboard
 	url = http://github.com/bwyrosdick/vim-blackboard.git
-  ignore = dirty
