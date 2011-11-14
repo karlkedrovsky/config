@@ -30,3 +30,6 @@
 	path = vim/bundle/blackboard
 	url = http://github.com/bwyrosdick/vim-blackboard.git
   ignore = dirty
+[submodule "vim/bundle/solarized"]
+	path = vim/bundle/solarized
+	url = https://github.com/altercation/vim-colors-solarized.git

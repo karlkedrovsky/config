@@ -21,7 +21,7 @@ set number
 set ruler
 set wildmode=longest,list
 set clipboard=unnamed
-colorscheme blackboard
+colorscheme solarized
 
 " Backup files
 set backup
