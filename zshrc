@@ -35,3 +35,16 @@ bindkey -v
 
 # aliases
 alias todo="vim ~/Dropbox/PlainText/Karl/Todo.txt"
+
+# colors
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+  export TERM='xterm-256color'
+else
+  export TERM='xterm-color'
+fi
+
+# Keychain
+if [[ -x /usr/bin/keychain && -e ~/.ssh/id_dsa ]]; then
+    /usr/bin/keychain -q ~/.ssh/id_dsa
+    source ~/.keychain/`uname -n`-sh >/dev/null
+fi
