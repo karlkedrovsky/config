@@ -1,11 +1,12 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+ZSH=$HOME/Dropbox/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="candy"
+#ZSH_THEME="candy"
+ZSH_THEME="karl"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -29,15 +30,21 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+platform=`uname`
+if [[ $platform == 'Darwin' ]]; then
+  export PATH=$HOME/bin:/opt/local/bin:/opt/local/sbin:/opt/local/apache2/bin:$PATH
+fi
 unsetopt beep
 bindkey -v
 # autoload -U promptinit && promptinit
 
 # aliases
 alias todo="vim ~/Dropbox/PlainText/Karl/Todo.txt"
+alias -s txt=vim
+alias -s php=vim
 
 # colors
-if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+if [[ -e /usr/share/terminfo/x/xterm-256color || -e /usr/share/terminfo/78/xterm-256color ]]; then
   export TERM='xterm-256color'
 else
   export TERM='xterm-color'
@@ -48,3 +55,7 @@ if [[ -x /usr/bin/keychain && -e ~/.ssh/id_dsa ]]; then
     /usr/bin/keychain -q ~/.ssh/id_dsa
     source ~/.keychain/`uname -n`-sh >/dev/null
 fi
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
