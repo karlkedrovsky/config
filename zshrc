@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/Dropbox/oh-my-zsh
-
+# 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -44,10 +44,12 @@ alias -s txt=vim
 alias -s php=vim
 
 # colors
-if [[ -e /usr/share/terminfo/x/xterm-256color || -e /usr/share/terminfo/78/xterm-256color ]]; then
-  export TERM='xterm-256color'
-else
-  export TERM='xterm-color'
+if [[ $TERM != 'linux' ]]; then
+  if [[ -e /usr/share/terminfo/x/xterm-256color || -e /usr/share/terminfo/78/xterm-256color ]]; then
+    export TERM='xterm-256color'
+  else
+    export TERM='xterm-color'
+  fi
 fi
 
 # Keychain
