@@ -19,3 +19,5 @@ fi
 #This file is sourced by bash when you log in interactively.
 [ -f ~/.bashrc ] && . ~/.bashrc
 
+
+[[ -s "/home/karl/.rvm/scripts/rvm" ]] && source "/home/karl/.rvm/scripts/rvm" 
