@@ -55,6 +55,7 @@ fi
 # Keychain
 if [[ -x /usr/bin/keychain && -e ~/.ssh/id_dsa ]]; then
     /usr/bin/keychain -q ~/.ssh/id_dsa
+    /usr/bin/keychain -q ~/.ssh/id_rsa
     source ~/.keychain/`uname -n`-sh >/dev/null
 fi
 

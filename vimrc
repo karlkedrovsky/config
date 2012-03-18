@@ -48,8 +48,11 @@ if has("autocmd")
   augroup END
 endif
 
+" Tags
+set tags=./tags;$HOME
+
 " Vimwiki
 
 " Key bindings
 map <F2> :NERDTreeToggle<CR>
-
+inoremap jj <Esc>
