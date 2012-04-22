@@ -1,11 +1,17 @@
 filetype off
-call pathogen#runtime_append_all_bundles() 
-" tcomment has a bug in the docs that makes helptags complain.
-" uncomment this when it's fixed.
-" call pathogen#helptags()
-
 " General settings
 set nocompatible
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-fugitive'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'taglist.vim'
+
 set bg=dark
 syntax on
 filetype plugin indent on
@@ -21,6 +27,9 @@ set number
 set ruler
 set wildmode=longest,list
 set clipboard=unnamed
+" the laststatus and encoding were added for powerline
+set laststatus=2
+set encoding=utf-8
 colorscheme solarized
 
 " Backup files

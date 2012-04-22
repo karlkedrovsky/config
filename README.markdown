@@ -13,34 +13,22 @@ own use run the following.
 
     git clone git://gihub.com/karlkedrovsky/config.git
 
-Plugins are managed using pathogen and use git submodules where possible. I
-pretty much just stole what Drew Neil described at
-http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen.
-You should also take a look at Drew's set up on github -
-http://github.com/nelstrom/dotfiles.
-
-If you're not using Dropbox do the following to get the submodules.
-
-    cd config
-    git submodule init
-    git submodule update
-
 After syncing through Dropbox (or cloning the git repository) run the following
 for a new set up.
 
     ln -s ~/Dropbox/home/vimrc ~/.vimrc
-    ln -s ~/Dropbox/home/vim ~/.vim
     ln -s ~/Dropbox/home/gvimrc ~/.gvimrc
     mkdir ~/.vimbackup
     mkdir ~/.vimswap
     mkdir ~/.vimviews
 
-Adding a new submodule.
+Plugins are managed using [vundle](https://github.com/gmarik/vundle). Just run
+the following to install vundle and download all the plugins. The first time
+you run the BundleInstall it will complain about not being able to find the
+Solarized theme (which it's about to install) but you can safely ignore it.
 
-    cd ~/Dropbox/home
-    git submodule add http://github.com/tpope/vim-fugitive.git vim/bundle/fugitive
-    git add .
-    git commit -m "Install Fugitive.vim bundle as a submodule."
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    vim +BundleInstall +qall
 
 Zsh Config
 ==========
