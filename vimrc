@@ -11,6 +11,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'taglist.vim'
+Bundle 'bufexplorer.zip'
 
 set bg=dark
 syntax on
