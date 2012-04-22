@@ -32,7 +32,9 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 platform=`uname`
 if [[ $platform == 'Darwin' ]]; then
-  export PATH=$HOME/bin:/opt/local/bin:/opt/local/sbin:/opt/local/apache2/bin:$PATH
+  export PATH=$HOME/bin:$PATH
+else
+  export PATH=$HOME/bin:$PATH
 fi
 unsetopt beep
 bindkey -v
