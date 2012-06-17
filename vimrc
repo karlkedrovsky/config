@@ -9,9 +9,11 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
 Bundle 'plasticboy/vim-markdown'
-Bundle 'Lokaltog/vim-powerline'
+" Bundle 'Lokaltog/vim-powerline'
 Bundle 'taglist.vim'
 Bundle 'bufexplorer.zip'
+Bundle 'jpalardy/vim-slime'
+Bundle 'vim-scripts/VimClojure'
 
 set bg=dark
 syntax on
@@ -28,10 +30,17 @@ set number
 set ruler
 set wildmode=longest,list
 set clipboard=unnamed
+set spelllang=en_us
 " the laststatus and encoding were added for powerline
 set laststatus=2
 set encoding=utf-8
 colorscheme solarized
+
+" Powerline
+let g:Powerline_symbols = 'fancy'
+
+" vim-slime
+let g:slime_target = "tmux"
 
 " Backup files
 set backup
