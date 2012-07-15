@@ -6,6 +6,8 @@ Xft.antialias: 1
 Xft.dpi: 96
 Xft.rgba: rgb
 
+Emacs.FontBackend: xft
+
 XTerm*termName: xterm-256color
 !XTerm*faceName: inconsolata:pixelsize=15
 !XTerm*faceName: monaco:pixelsize=15
@@ -23,12 +25,21 @@ URxvt*saveLines: 12000
 URxvt*scrollBar: false
 URxvt*scrollBar_right: false
 URxvt*loginShell: true
+URxvt*termName: screen-256color
 ! URxvt*faceName: Inconsolata:pixelsize=15
 ! URxvt*faceName: Lucida Sans:pixelsize=15
 ! URxvt*font: xft:monaco:size=14
+! URxvt*font: xft:Inconsolata:size=12
+! URxvt*font: 9x15
 ! URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=14:antialias=true:hinting=true
-URxvt*font: xft:droid sans mono:pixelsize=14
-URxvt*boldFont: xft:droid sans mono:medium:pixelsize=14
+! URxvt*font: xft:droid sans mono:pixelsize=14
+! URxvt*boldFont: xft:droid sans mono:medium:pixelsize=14
+! URxvt*font:                 xft:DEjaVu Sans Mono:pixelsize=10
+URxvt*font:                 xft:Monaco\ for\ Powerline:regular:size=10
+URxvt*imFont:               xft:Monaco\ for\ Powerline:regular:size=10
+URxvt*boldFont:             xft:Monaco\ for\ Powerline:bold:size=10
+URxvt*italicFont:           xft:Monaco\ for\ Powerline:italic:size=10
+URxvt*boldItalicFont:       xft:Monaco\ for\ Powerline:bold:italic:size=10
 
 !!SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      RGB         HSB
 !!--------- ------- ---- -------  ----------- ---------- ----------- -----------

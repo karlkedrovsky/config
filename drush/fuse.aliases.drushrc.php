@@ -9,10 +9,12 @@ $aliases['local'] = array(
 $aliases['dev'] = array(
   'uri' => 'fuse.vmldev.com',
   'root' => '/var/www/vhosts/vml/fuse.vml.com/htdocs',
-  'dump-dir' => '/home/kkedrovsky/drush-dump-dir',
+  'dump-dir' => '/home/local/VML/kkedrovsky/drush-dump-dir',
   'remote-host' => 'fuse.vmldev.com',
   'remote-user' => 'kkedrovsky',
   'path-aliases' => array(
+    '%drush' => '/home/local/VML/kkedrovsky/drush',
+    '%drush-script' => '/home/local/VML/kkedrovsky/drush/drush',
     '%files' => 'sites/default/files',
   ),
 );

@@ -1,0 +1,139 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Sat Jul 14 08:52:44 2012
+;; Desktop file format version 206
+;; Emacs version 24.1.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("emacs" "xini" "sess" "tramp" "yasnip"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/Dropbox/org/home.org" "~/clojure/test/" "~/workspace/cljtest/" "~/Dropbox/home/emacs.d/init.el" "~/.xinitrc" "~/" "~/.xmonad/xmonad.hs" "~/.Xdefaults" "~/.xmobarrc" "~/workspace/noirtest/" "~/Dropbox/org/" "~/Dropbox/org/home.org" "~/Dropbox/PlainText/Karl/bible_in_a_year.txt" "~/.emacs.d/" "~/Dropbox/PlainText/Karl/bible_in_a_year.txt" "~/workspace/kedrovsky.com/README.txt" "~/.emacs.d/init.el" "~/Dropbox/PlainText/Karl/bible_in_a_year.txt" "/sudo::/etc/hosts" "~/.emacs.d/init.el"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/karl/Dropbox/org/home.org"
+  "home.org"
+  'org-mode
+  nil
+  266
+  '(307 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines . t)))
+
+(desktop-create-buffer 206
+  "/home/karl/clojure/test/src/test/core.clj"
+  "core.clj"
+  'clojure-mode
+  '(slime-mode)
+  145
+  '(124 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "test"
+  'dired-mode
+  nil
+  926
+  '(698 nil)
+  t
+  '("/home/karl/clojure/test/" "/home/karl/clojure/test/src/" "/home/karl/clojure/test/src/test/")
+  nil)
+
+(desktop-create-buffer 206
+  "/home/karl/.xmobarrc"
+  ".xmobarrc"
+  'fundamental-mode
+  nil
+  622
+  '(465 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/karl/Dropbox/home/emacs.d/init.el"
+  "init.el"
+  'emacs-lisp-mode
+  nil
+  242
+  '(335 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/karl/Dropbox/home/Xdefaults"
+  "Xdefaults"
+  'conf-xdefaults-mode
+  nil
+  150
+  '(128 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/karl/.xmonad/xmonad.hs"
+  "xmonad.hs"
+  'fundamental-mode
+  nil
+  360
+  '(621 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/karl/.xinit-xmonad"
+  ".xinit-xmonad"
+  'fundamental-mode
+  nil
+  196
+  '(68 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "~"
+  'dired-mode
+  nil
+  7053
+  '(652 nil)
+  t
+  '("/home/karl/")
+  nil)
+
+(desktop-create-buffer 206
+  "/home/karl/workspace/noirtest/src/noirtest/views/welcome.clj"
+  "welcome.clj"
+  'clojure-mode
+  '(slime-mode)
+  279
+  '(246 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "noirtest"
+  'dired-mode
+  nil
+  1372
+  '(1072 nil)
+  t
+  '("/home/karl/workspace/noirtest/" "/home/karl/workspace/noirtest/src/" "/home/karl/workspace/noirtest/src/noirtest/" "/home/karl/workspace/noirtest/src/noirtest/views/")
+  nil)
+

@@ -19,7 +19,7 @@ if (PHP_OS == 'Darwin') {
 $aliases['prod'] = array(
   'uri' => 'www.harvestbaptistks.org',
   'root' => '/var/www/harvestbaptistks/htdocs',
-  'remote-host' => 'harvestbaptistks.org',
+  'remote-host' => 'www.kedrovsky.com',
   'remote-user' => 'karl',
   'dump-dir' => '/home/karl/drush-dump-dir',
   'path-aliases' => array(

@@ -1,0 +1,10 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("Bible In A Year"
+ (filename . "~/Dropbox/PlainText/Karl/bible_in_a_year.txt")
+ (front-context-string . "www.bibleyear.co")
+ (rear-context-string)
+ (position . 1))
+)
