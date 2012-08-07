@@ -4,6 +4,20 @@ Config Files
 This repository contains my own personal config files that I use on Linux and
 OS X.
 
+Emacs Config
+============
+
+I only want to share the init.el file between machines and it's the only thing that contains shared config. To setup emacs on a new machine I just do this.
+
+    mkdir ~/.emacs.d
+	ln -s ~/Dropbox/home/emacs.d/init.el ~/emacs.d
+    cd ~/.emacs.d
+	git clone https://github.com/sellout/emacs-color-theme-solarized.git
+		
+The first time emacs is run on the machine the packages specified in
+the init.el file will be installed. The git commands above install the
+packages that I don't install via the package manager.
+
 Vim Config
 ==========
 
