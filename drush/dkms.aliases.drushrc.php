@@ -7,7 +7,7 @@ $aliases['local'] = array(
   ),
 );
 $aliases['dev'] = array(
-  'uri' => 'contour.vmldev.com',
+  'uri' => 'dkmsamericas.vmldev.com',
   'root' => '/var/www/vhosts/usbank/contour.vmldev.com/htdocs',
   'dump-dir' => '/home/local/VML/kkedrovsky/drush-dump-dir',
   'remote-host' => 'contour.vmldev.com',
