@@ -48,9 +48,12 @@
 (load-theme 'solarized-dark t)
 
 ; No menu bar or scroll bars
-(menu-bar-mode 0)
-(tool-bar-mode 0)
-(scroll-bar-mode 0)
+(if (fboundp 'menu-bar-mode)
+    (menu-bar-mode 0))
+(if (fboundp 'tool-bar-mode)
+    (tool-bar-mode 0))
+(if (fboundp 'scroll-bar-mode)
+    (scroll-bar-mode 0))
 
 ; Org mode
 (global-set-key "\C-cl" 'org-store-link)
