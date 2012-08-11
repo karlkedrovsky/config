@@ -1,6 +1,10 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/Dropbox/oh-my-zsh
-#
+if [[ -s "$HOME/Dropbox/oh-my-zsh" ]]; then
+  ZSH=$HOME/Dropbox/oh-my-zsh
+else
+  ZSH=$HOME/oh-my-zsh
+fi
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -37,7 +41,7 @@ else
   export PATH=$HOME/bin:$PATH
 fi
 unsetopt beep
-bindkey -v
+# bindkey -v
 # autoload -U promptinit && promptinit
 
 # aliases

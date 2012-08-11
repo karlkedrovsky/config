@@ -19,7 +19,12 @@
 ; Add top level emacs.d directory to load path
 (add-to-list 'load-path "~/.emacs.d")
 
+; Fonts
+;;(set-default-font "xft:Bitstream Vera Sans Mono-8")
+;;(set-face-attribute 'default nil :font "Droid Sans Mono-10")
+
 ; ido
+(require 'ido)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)

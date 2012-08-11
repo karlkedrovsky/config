@@ -6,6 +6,8 @@ Xft.antialias: 1
 Xft.dpi: 96
 Xft.rgba: rgb
 
+Emacs.FontBackend: xft
+
 XTerm*termName: xterm-256color
 !XTerm*faceName: inconsolata:pixelsize=15
 !XTerm*faceName: monaco:pixelsize=15
