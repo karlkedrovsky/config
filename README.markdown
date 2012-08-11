@@ -4,6 +4,12 @@ Config Files
 This repository contains my own personal config files that I use on Linux and
 OS X.
 
+For my own personal use config files are stored in Dropbox and version
+controlled through git.  If you're not me and you want to get a copy for your
+own use run the following.
+
+    git clone git://gihub.com/karlkedrovsky/config.git
+
 Emacs Config
 ============
 
@@ -21,14 +27,7 @@ packages that I don't install via the package manager.
 Vim Config
 ==========
 
-For my own personal use config files are stored in Dropbox and version
-controlled through git.  If you're not me and you want to get a copy for your
-own use run the following.
-
-    git clone git://gihub.com/karlkedrovsky/config.git
-
-After syncing through Dropbox (or cloning the git repository) run the following
-for a new set up.
+Run the following for a new set up.
 
     ln -s ~/Dropbox/home/vimrc ~/.vimrc
     ln -s ~/Dropbox/home/gvimrc ~/.gvimrc
