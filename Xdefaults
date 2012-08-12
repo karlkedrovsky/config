@@ -35,11 +35,16 @@ URxvt*termName: screen-256color
 ! URxvt*font: xft:droid sans mono:pixelsize=14
 ! URxvt*boldFont: xft:droid sans mono:medium:pixelsize=14
 ! URxvt*font:                 xft:DEjaVu Sans Mono:pixelsize=10
-URxvt*font:                 xft:Monaco\ for\ Powerline:regular:size=10
-URxvt*imFont:               xft:Monaco\ for\ Powerline:regular:size=10
-URxvt*boldFont:             xft:Monaco\ for\ Powerline:bold:size=10
-URxvt*italicFont:           xft:Monaco\ for\ Powerline:italic:size=10
-URxvt*boldItalicFont:       xft:Monaco\ for\ Powerline:bold:italic:size=10
+! URxvt*font:                 xft:Monaco\ for\ Powerline:regular:size=10
+! URxvt*imFont:               xft:Monaco\ for\ Powerline:regular:size=10
+! URxvt*boldFont:             xft:Monaco\ for\ Powerline:bold:size=10
+! URxvt*italicFont:           xft:Monaco\ for\ Powerline:italic:size=10
+! URxvt*boldItalicFont:       xft:Monaco\ for\ Powerline:bold:italic:size=10
+URxvt*font:                 xft:monaco:regular:size=11
+URxvt*imFont:               xft:monaco:regular:size=11
+URxvt*boldFont:             xft:monaco:bold:size=11
+URxvt*italicFont:           xft:monaco:italic:size=11
+URxvt*boldItalicFont:       xft:monaco:bold:italic:size=11
 
 !!SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      RGB         HSB
 !!--------- ------- ---- -------  ----------- ---------- ----------- -----------
