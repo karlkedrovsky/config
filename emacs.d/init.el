@@ -6,12 +6,14 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 (defvar my-packages '(clojure-mode
+		      nrepl
 		      expand-region
 		      magit
 		      markdown-mode
 		      php-mode
 		      slime
-		      yasnippet))
+		      yasnippet
+		      paredit))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
@@ -99,6 +101,14 @@
 ; Expand region mode
 (require 'expand-region)
 (global-set-key (kbd "C-@") 'er/expand-region)
+
+; Paredit
+(require 'paredit)
+(add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+(add-hook 'clojure-mode-hook    'enable-paredit-mode)
+
+; Emacs server
+(server-start)
 
 ; custom variables DO NOT EDIT
 (custom-set-variables
