@@ -37,6 +37,8 @@ source $ZSH/oh-my-zsh.sh
 platform=`uname`
 if [[ $platform == 'Darwin' ]]; then
   export PATH=$HOME/bin:$PATH
+  alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
+  alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
 else
   export PATH=$HOME/bin:$PATH
 fi
