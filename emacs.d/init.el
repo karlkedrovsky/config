@@ -1,7 +1,9 @@
 ; Packages
 (require 'package)
+;(add-to-list 'package-archives
+;	     '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
-	     '("marmalade" . "http://marmalade-repo.org/packages/"))
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 (when (not package-archive-contents)
   (package-refresh-contents))
@@ -13,13 +15,26 @@
 		      php-mode
 		      slime
 		      yasnippet
-		      paredit))
+		      paredit
+                      web-mode
+                      color-theme))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
 ; Add top level emacs.d directory to load path
 (add-to-list 'load-path "~/.emacs.d")
+
+; Add home directory to PATH
+(if (string= system-type "darwin")
+    (setenv "PATH" (concat (getenv "PATH") ":/Users/kkedrovsky/bin")))
+
+; use spaces not tabs
+(setq-default indent-tabs-mode nil)
+
+; use 2 spaces for indentation by default
+(setq c-basic-offset 2)
+(setq tab-width 2)
 
 ; Fonts
 ;;(set-default-font "xft:Bitstream Vera Sans Mono-8")
@@ -91,6 +106,7 @@
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.module$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\.php$" . web-mode))
 
 ; SCSS
 (add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
