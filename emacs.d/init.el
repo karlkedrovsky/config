@@ -55,6 +55,7 @@
 (global-set-key [C-kp-delete] 'ibuffer)
 (global-set-key [f1] 'magit-status)
 (global-set-key [f2] 'shell)
+(global-set-key [f5] 'other-window)
 (global-set-key [f8] 'undo)
 
 ; Save the buffers
@@ -62,7 +63,9 @@
 
 ; Solarized theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-color-theme-solarized")
-(load-theme 'solarized-dark t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+; (load-theme 'solarized-dark t)
+(load-theme 'tomorrow-night t)
 
 ; No menu bar or scroll bars
 (if (fboundp 'menu-bar-mode)
