@@ -17,6 +17,7 @@ I only want to share the init.el file between machines and it's the only thing t
 
     mkdir ~/.emacs.d
     ln -s ~/Dropbox/home/emacs.d/init.el ~/emacs.d
+    ln -s ~/Dropbox/home/emacs.d/themes ~/emacs.d
     cd ~/.emacs.d
     git clone https://github.com/sellout/emacs-color-theme-solarized.git
 		

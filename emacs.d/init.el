@@ -2,8 +2,8 @@
 (require 'package)
 ;(add-to-list 'package-archives
 ;	     '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 (when (not package-archive-contents)
   (package-refresh-contents))
@@ -76,9 +76,12 @@
     (scroll-bar-mode 0))
 
 ; Org mode
+(setq org-directory "~/bitpocket/org")
+(setq org-default-notes-file (concat org-directory "/notes.org"))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
+(global-set-key "\C-cc" 'org-capture)
 
 ; Shell
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
