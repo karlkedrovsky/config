@@ -85,7 +85,10 @@
 
 ; Shell
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+(setq explicit-shell-file-name "/usr/local/bin/zsh")
 (setq shell-file-name "zsh")
+(setq explicit-bash.exe-args '("--login"))
+(setenv "SHELL" shell-file-name)
 
 ; Magit
 (require 'magit)
@@ -109,6 +112,10 @@
 ; PHP and Drupal modes
 ; (setq drupal-ide-load-path (concat user-emacs-directory "drupal/drupal-init.el"))
 ; (autoload 'drupal-ide drupal-ide-load-path "Start IDE for PHP & Drupal development" t)
+; Not sure why flymake is required by php-mode but it is...
+(require 'flymake)
+(require 'php-mode)
+(require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.module$" . php-mode))
