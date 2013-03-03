@@ -42,8 +42,12 @@ unsetopt beep
 # bindkey -v
 # autoload -U promptinit && promptinit
 
+export LANG=en_US.UTF-8
+export LC_CYTPE=$LANG
+
 # aliases
 alias todo="vim ~/Dropbox/PlainText/Karl/Todo.txt"
+alias e="emacsclient -t"
 alias -s txt=vim
 alias -s php=vim
 
@@ -56,6 +60,19 @@ if [[ $TERM != 'linux' && $TERM != 'dumb' ]]; then
   fi
 fi
 
+# Fix prompt for tramp connections in emacs
+if [[ $IN_TRAMP_MODE == "t" ]]; then
+    #PS1='%(?..[%?])%!:%~%# '
+    PS1='$'
+    # for tramp to not hang, need the following. cf:
+    # http://www.emacswiki.org/emacs/TrampMode
+    unsetopt zle
+    unsetopt prompt_cr
+    unsetopt prompt_subst
+    #unfunction precmd
+    #unfunction preexec
+fi
+
 # Keychain
 if [[ -x /usr/bin/keychain && -e ~/.ssh/id_dsa ]]; then
     /usr/bin/keychain -q ~/.ssh/id_dsa
@@ -65,3 +82,5 @@ fi
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

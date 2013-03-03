@@ -1,3 +1,14 @@
+; No menu bar or scroll bars
+(if (fboundp 'menu-bar-mode)
+    (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode)
+    (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode)
+    (scroll-bar-mode -1))
+
+; No splash screen
+(setq inhibit-startup-message t)
+
 ; Packages
 (require 'package)
 ;(add-to-list 'package-archives
@@ -12,12 +23,14 @@
 		      expand-region
 		      magit
 		      markdown-mode
+                      cl-lib
 		      php-mode
 		      slime
 		      yasnippet
 		      paredit
                       web-mode
-                      color-theme))
+                      color-theme
+                      twittering-mode))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
@@ -38,7 +51,9 @@
 
 ; Fonts
 ;;(set-default-font "xft:Bitstream Vera Sans Mono-8")
-;;(set-face-attribute 'default nil :font "Droid Sans Mono-10")
+(set-face-attribute 'default nil :font "Droid Sans Mono-10")
+(set-default-font "Droid Sans Mono-10")
+(setq default-frame-alist '((font . "Droid Sans Mono-10")))
 
 ; ido
 (require 'ido)
@@ -65,15 +80,7 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-color-theme-solarized")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 ; (load-theme 'solarized-dark t)
-(load-theme 'tomorrow-night t)
-
-; No menu bar or scroll bars
-(if (fboundp 'menu-bar-mode)
-    (menu-bar-mode 0))
-(if (fboundp 'tool-bar-mode)
-    (tool-bar-mode 0))
-(if (fboundp 'scroll-bar-mode)
-    (scroll-bar-mode 0))
+(load-theme 'tomorrow-night-eighties t)
 
 ; Org mode
 (setq org-directory "~/bitpocket/org")
@@ -85,7 +92,8 @@
 
 ; Shell
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-(setq explicit-shell-file-name "/usr/local/bin/zsh")
+(if (string= system-type "darwin")
+    (setq explicit-shell-file-name "/usr/local/bin/zsh"))
 (setq shell-file-name "zsh")
 (setq explicit-bash.exe-args '("--login"))
 (setenv "SHELL" shell-file-name)
@@ -99,11 +107,13 @@
 ; Tramp
 (require 'tramp)
 (setq tramp-default-method "ssh")
+; (add-to-list 'tramp-remote-process-environment "IN_TRAMP_MODE=t")
+
 ;; The following two lines enable editing remote files as root
-(add-to-list 'tramp-default-proxies-alist
-	     '(nil "\\`root\\'" "/ssh:%h:"))
-(add-to-list 'tramp-default-proxies-alist
-	     '((regexp-quote (system-name)) nil nil))
+; (add-to-list 'tramp-default-proxies-alist
+; 	     '(nil "\\`root\\'" "/ssh:%h:"))
+; (add-to-list 'tramp-default-proxies-alist
+; 	     '((regexp-quote (system-name)) nil nil))
 
 ; Markdown mode
 (setq auto-mode-alist
@@ -120,6 +130,7 @@
 (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.module$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\.php$" . web-mode))
+(add-hook 'php-mode-hook 'php-enable-drupal-coding-style)
 
 ; SCSS
 (add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
@@ -135,6 +146,9 @@
 (require 'paredit)
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 (add-hook 'clojure-mode-hook    'enable-paredit-mode)
+
+; Twitter
+(require 'twittering-mode)
 
 ; Emacs server
 (server-start)
