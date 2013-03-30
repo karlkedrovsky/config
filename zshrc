@@ -32,7 +32,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 platform=`uname`
 if [[ $platform == 'Darwin' ]]; then
-  export PATH=$HOME/bin:$PATH
+  export PATH=$HOME/bin:/usr/local/bin:$PATH
   alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
   alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
 else
@@ -47,7 +47,6 @@ export LC_CYTPE=$LANG
 
 # aliases
 alias todo="vim ~/Dropbox/PlainText/Karl/Todo.txt"
-alias e="emacsclient -t"
 alias -s txt=vim
 alias -s php=vim
 

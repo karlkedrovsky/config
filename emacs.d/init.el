@@ -30,7 +30,8 @@
 		      paredit
                       web-mode
                       color-theme
-                      twittering-mode))
+                      powerline
+                      git-gutter))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
@@ -38,9 +39,15 @@
 ; Add top level emacs.d directory to load path
 (add-to-list 'load-path "~/.emacs.d")
 
-; Add home directory to PATH
-(if (string= system-type "darwin")
-    (setenv "PATH" (concat (getenv "PATH") ":/Users/kkedrovsky/bin")))
+; Add paths exec-path on the mac
+(when (string= system-type "darwin")
+  (add-to-list 'exec-path "/usr/local/bin")
+  (add-to-list 'exec-path "/Users/kkedrovsky/bin"))
+
+;;    (setenv "PATH" (concat (getenv "PATH") ":/Users/kkedrovsky/bin"))
+
+; start with empty scratch buffer
+(setq initial-scratch-message nil)
 
 ; use spaces not tabs
 (setq-default indent-tabs-mode nil)
@@ -51,9 +58,10 @@
 
 ; Fonts
 ;;(set-default-font "xft:Bitstream Vera Sans Mono-8")
-(set-face-attribute 'default nil :font "Droid Sans Mono-10")
-(set-default-font "Droid Sans Mono-10")
-(setq default-frame-alist '((font . "Droid Sans Mono-10")))
+(when (not (string= system-type "darwin"))
+  (set-face-attribute 'default nil :font "Droid Sans Mono-10")
+  (set-default-font "Droid Sans Mono-10")
+  (setq default-frame-alist '((font . "Droid Sans Mono-10"))))
 
 ; ido
 (require 'ido)
@@ -101,6 +109,9 @@
 ; Magit
 (require 'magit)
 
+; Git gutter
+(global-git-gutter-mode t)
+
 ; Yasnippet
 (require 'yasnippet)
 
@@ -147,8 +158,9 @@
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 (add-hook 'clojure-mode-hook    'enable-paredit-mode)
 
-; Twitter
-(require 'twittering-mode)
+; Powerline
+(require 'powerline)
+(powerline-default)
 
 ; Emacs server
 (server-start)
@@ -166,3 +178,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'downcase-region 'disabled nil)

@@ -1,4 +1,4 @@
 # colors for ls, etc.
 alias ls="ls -G"
 alias ll="ls -Gl"
-alias todo="vim ~/Dropbox/PlainText/Karl/Todo.txt"
+alias drupalctags="ctags --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse"
