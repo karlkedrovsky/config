@@ -1,7 +1,3 @@
-#+Title:  Emacs Configuration Files
-#+AUTHOR: Karl Kedrovsky
-#+EMAIL:  karl@kedrovsky.com
-
 # Emacs Configuration
 
 My personal emacs configuration. This is very much a work in progress...

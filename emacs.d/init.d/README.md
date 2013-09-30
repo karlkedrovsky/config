@@ -1,7 +1,3 @@
-#+Title:  Emacs Configuration Files
-#+AUTHOR: Karl Kedrovsky
-#+EMAIL:  karl@kedrovsky.com
-
 # Emacs Configuration Files
 
 This directory contains all the initialization files for my emacs
@@ -14,6 +10,5 @@ things load in order.
 - 10 - Package setup and installation.
 - 20 - Non-package specific configuration. Things like fonts and themes.
 - 30 - Individual package configuration.
-- 
+-
 - 99 - Customize file.
-
