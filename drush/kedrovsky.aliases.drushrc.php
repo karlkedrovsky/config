@@ -8,6 +8,15 @@ if (PHP_OS == 'Darwin') {
       '%files' => 'sites/www.kedrovsky.com/files',
     ),
   );
+} elseif (gethostname() == 'home') {
+  // Home development VM
+  $aliases['local'] = array(
+    'uri' => 'kedrovsky',
+    'root' => '/var/www/kedrovsky.com/htdocs',
+    'path-aliases' => array(
+      '%files' => 'sites/www.kedrovsky.com/files',
+    ),
+  );
 } else {
   $aliases['local'] = array(
     'uri' => 'kedrovsky',

@@ -41,12 +41,13 @@ fi
 unsetopt beep
 # bindkey -v
 # autoload -U promptinit && promptinit
+setopt auto_pushd
 
 export LANG=en_US.UTF-8
 export LC_CYTPE=$LANG
 
 # aliases
-alias todo="vim ~/Dropbox/PlainText/Karl/Todo.txt"
+alias ctagsdrupal='ctags -e --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse'
 alias -s txt=vim
 alias -s php=vim
 

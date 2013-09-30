@@ -45,7 +45,8 @@ URxvt*termName: screen-256color
 ! URxvt*boldFont:             xft:monaco:bold:size=11
 ! URxvt*italicFont:           xft:monaco:italic:size=11
 ! URxvt*boldItalicFont:       xft:monaco:bold:italic:size=11
-URxvt*font:                 xft:DejaVu Sans Mono:pixelsize=13
+! URxvt*font:                 xft:DejaVu Sans Mono:pixelsize=13
+URxvt*font:                 xft:Droid Sans Mono:pixelsize=13
 
 !!---------------------------------------------------------------------------
 !! Color Schemes
@@ -99,35 +100,35 @@ URxvt*font:                 xft:DejaVu Sans Mono:pixelsize=13
 ! *cursorColor:           S_base1
 ! *pointerColorBackground:S_base01
 ! *pointerColorForeground:S_base1
-! 
+!
 ! !! black dark/light
 ! *color0:                S_base02
 ! *color8:                S_base03
-! 
+!
 ! !! red dark/light
 ! *color1:                S_red
 ! *color9:                S_orange
-! 
+!
 ! !! green dark/light
 ! *color2:                S_green
 ! *color10:               S_base01
-! 
+!
 ! !! yellow dark/light
 ! *color3:                S_yellow
 ! *color11:               S_base00
-! 
+!
 ! !! blue dark/light
 ! *color4:                S_blue
 ! *color12:               S_base0
-! 
+!
 ! !! magenta dark/light
 ! *color5:                S_magenta
 ! *color13:               S_violet
-! 
+!
 ! !! cyan dark/light
 ! *color6:                S_cyan
 ! *color14:               S_base1
-! 
+!
 ! !! white dark/light
 ! *color7:                S_base2
 ! *color15:               S_base3
@@ -136,18 +137,73 @@ URxvt*font:                 xft:DejaVu Sans Mono:pixelsize=13
 !! Tomorrow Night
 !!---------------------------------------------------------------------------
 
-#define t_background    #1d1f21
-#define t_current_line  #282a2e
-#define t_selection     #373b41
-#define t_foreground    #c5c8c6
-#define t_comment       #969896
-#define t_red           #cc6666
-#define t_orange        #de935f
-#define t_yellow        #f0c674
-#define t_green         #b5bd68
-#define t_aqua          #8abeb7
-#define t_blue          #81a2be
-#define t_purple        #b294bb
+! #define t_background    #1d1f21
+! #define t_current_line  #282a2e
+! #define t_selection     #373b41
+! #define t_foreground    #c5c8c6
+! #define t_comment       #969896
+! #define t_red           #cc6666
+! #define t_orange        #de935f
+! #define t_yellow        #f0c674
+! #define t_green         #b5bd68
+! #define t_aqua          #8abeb7
+! #define t_blue          #81a2be
+! #define t_purple        #b294bb
+!
+!
+! *.foreground:   t_foreground
+! *.background:   t_background
+! *.cursorColor:  #aeafad
+!
+! ! Black / Grey
+! *.color0:       #000000
+! *.color8:       #666666
+!
+! ! Red / Bright Red
+! *.color1:       t_red
+! *.color9:       #FF3334
+!
+! ! Green + Bright Green
+! *.color2:       t_green
+! *.color10:      #9ec400
+!
+! ! Yellow (Orange) + Bright Yellow (Yellow)
+! *.color3:       t_orange
+! *.color11:      t_yellow
+!
+! ! Blue + Bright Blue
+! *.color4:       t_blue
+! *.color12:      t_blue
+!
+! ! Magenta (Purple) + Bright Magenta
+! *.color5:       t_purple
+! *.color13:      #b777e0
+!
+! ! Cyan (Aqua) + Bright Cyan
+! *.color6:       t_aqua
+! *.color14:      #54ced6
+!
+! ! Light Grey (Selection) + White (Current Line)
+! *.color7:       t_selection
+! *.color15:      t_current_line
+
+!!---------------------------------------------------------------------------
+!! Tomorrow Night Eighties
+!!---------------------------------------------------------------------------
+
+!TomorrowNightEighties
+#define t_background        #2d2d2d
+#define t_current_line      #393939
+#define t_selection      	#515151
+#define t_foreground      	#cccccc
+#define t_comment	     	#999999
+#define t_red		     	#f2777a
+#define t_orange	     	#f99157
+#define t_yellow        	#ffcc66
+#define t_green	        	#99cc99
+#define t_aqua	        	#66cccc
+#define t_blue	        	#6699cc
+#define t_purple        	#cc99cc
 
 
 *.foreground:   t_foreground
@@ -186,7 +242,6 @@ URxvt*font:                 xft:DejaVu Sans Mono:pixelsize=13
 *.color7:       t_selection
 *.color15:      t_current_line
 
-
 !!---------------------------------------------------------------------------
 !! Tomorrow Night Bright
 !!---------------------------------------------------------------------------
@@ -203,40 +258,40 @@ URxvt*font:                 xft:DejaVu Sans Mono:pixelsize=13
 ! #define t_aqua          #70c0b1
 ! #define t_blue          #7aa6da
 ! #define t_purple        #c397d8
-! 
-! 
+!
+!
 ! *.foreground:   t_foreground
 ! *.background:   t_background
 ! *.cursorColor:  #aeafad
-! 
+!
 ! ! Black / Grey
 ! *.color0:       #000000
 ! *.color8:       #666666
-! 
+!
 ! ! Red / Bright Red
 ! *.color1:       t_red
 ! *.color9:       #FF3334
-! 
+!
 ! ! Green + Bright Green
 ! *.color2:       t_green
 ! *.color10:      #9ec400
-! 
+!
 ! ! Yellow (Orange) + Bright Yellow (Yellow)
 ! *.color3:       t_orange
 ! *.color11:      t_yellow
-! 
+!
 ! ! Blue + Bright Blue
 ! *.color4:       t_blue
 ! *.color12:      t_blue
-! 
+!
 ! ! Magenta (Purple) + Bright Magenta
 ! *.color5:       t_purple
 ! *.color13:      #b777e0
-! 
+!
 ! ! Cyan (Aqua) + Bright Cyan
 ! *.color6:       t_aqua
 ! *.color14:      #54ced6
-! 
+!
 ! ! Light Grey (Selection) + White (Current Line)
 ! *.color7:       t_selection
 ! *.color15:      t_current_line
@@ -252,56 +307,56 @@ URxvt*font:                 xft:DejaVu Sans Mono:pixelsize=13
 ! Rxvt.color8      : #0a0a0a
 ! XTerm*color0     : #121212
 ! XTerm*color8     : #0a0a0a
-! 
+!
 ! !red.normal      : red.bright.r - 8
 ! !red.bright      : xoria256.Special.guifg
 ! Rxvt.color1      : #d78787
 ! Rxvt.color9      : #df8787
 ! XTerm*color1     : #d78787
 ! XTerm*color9     : #df8787
-! 
+!
 ! !green.normal    : green.bright.g - 8
 ! !green.bright    : xoria256.PreProc.guifg
 ! Rxvt.color2      : #afd787
 ! Rxvt.color10     : #afdf87
 ! XTerm*color2     : #afd787
 ! XTerm*color10    : #afdf87
-! 
+!
 ! !yellow.normal   : yellow.bright.rg - 8
 ! !yellow.bright   : xoria256.Special.guifg
 ! Rxvt.color3      : #f7f7af
 ! Rxvt.color11     : #ffffaf
 ! XTerm*color3     : #f7f7af
 ! XTerm*color11    : #ffffaf
-! 
+!
 ! !blue.normal     : blue.bright.b - 8
 ! !blue.bright     : xoria256.Statement.guifg
 ! Rxvt.color4      : #87afd7
 ! Rxvt.color12     : #87afdf
 ! XTerm*color4     : #87afd7
 ! XTerm*color12    : #87afdf
-! 
+!
 ! !magenta.normal  : magenta.bright.rb - 8
 ! !magenta.bright  : xoria256.Identifier.guifg
 ! Rxvt.color5      : #d7afd7
 ! Rxvt.color13     : #dfafdf
 ! XTerm*color5     : #d7afd7
 ! XTerm*color13    : #dfafdf
-! 
+!
 ! !cyan.normal     : cyan.bright.gb - 8
 ! !cyan.bright     : green.bright + blue.bright
 ! Rxvt.color6      : #afd7d7
 ! Rxvt.color14     : #afdfdf
 ! XTerm*color6     : #afd7d7
 ! XTerm*color14    : #afdfdf
-! 
+!
 ! !white.normal    : white.bright.rgb - 8
 ! !white.bright    : xoria256.Folded.guifg
 ! Rxvt.color7      : #e6e6e6
 ! Rxvt.color15     : #eeeeee
 ! XTerm*color7     : #e6e6e6
 ! XTerm*color15    : #eeeeee
-! 
+!
 ! !foreground      : xoria256.Normal.guifg
 ! !background      : xoria256.Normal.guibg
 ! !cursor          : xoria256.Cursor.guibg
@@ -313,7 +368,7 @@ URxvt*font:                 xft:DejaVu Sans Mono:pixelsize=13
 ! XTerm*background : #000000
 ! Rxvt.cursorColor : #ffaf00
 ! XTerm*cursorColor : #ffaf00
-! 
+!
 ! !bold            : xoria256.Type.guifg
 ! !underline       : xoria256.htmlValue.guifg
 ! Rxvt.colorBD     : #afafdf
