@@ -1,0 +1,12 @@
+backup
+/url/cookies
+/secrets.el
+/session.*
+/tramp
+/elpa
+.emacs.desktop
+.emacs.desktop.lock
+.#*
+*~
+/el-get/el-get/
+/el-get

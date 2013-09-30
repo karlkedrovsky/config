@@ -1,0 +1,12 @@
+(require 'ido)
+(require 'magit)
+; Not sure why flymake is required by php-mode but it is...
+(require 'flymake)
+(require 'php-mode)
+(require 'web-mode)
+(require 'tramp)
+(require 'yasnippet)
+(require 'clojure-mode)
+(require 'expand-region)
+(require 'paredit)
+(require 'powerline)
