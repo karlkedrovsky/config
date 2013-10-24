@@ -1,45 +1,39 @@
 Config Files
 ============
 
-This repository contains my own personal config files that I use on Linux and
-OS X.
+This repository contains my own personal config files that I use on
+Linux and OS X.
 
-For my own personal use config files are stored in Dropbox and version
-controlled through git.  If you're not me and you want to get a copy for your
-own use run the following.
+Whenever I set up a new machine I simply clone the repo into my home
+directory.
 
-    git clone git://gihub.com/karlkedrovsky/config.git
+    git clone git://gihub.com/karlkedrovsky/config.git ~/config
 
 Emacs Config
 ============
 
-I only want to share the init.el file between machines and it's the only thing that contains shared config. To setup emacs on a new machine I just do this.
+Just symlink the emacs.d directory.
 
-    mkdir ~/.emacs.d
-    ln -s ~/Dropbox/home/emacs.d/init.el ~/emacs.d
-    ln -s ~/Dropbox/home/emacs.d/themes ~/emacs.d
-    cd ~/.emacs.d
-    git clone https://github.com/sellout/emacs-color-theme-solarized.git
-		
+    ln -s ~/config/emacs.d ~/emacs.d
+
 The first time emacs is run on the machine the packages specified in
-the init.el file will be installed. The git commands above install the
-packages that I don't install via the package manager.
+the init.el file will be installed.
 
 Vim Config
 ==========
 
-Run the following for a new set up.
+Run the following for a new set up. I switched back to emacs a while
+ago so this may or may not be up to date.
 
-    ln -s ~/Dropbox/home/vimrc ~/.vimrc
-    ln -s ~/Dropbox/home/gvimrc ~/.gvimrc
-    mkdir ~/.vimbackup
-    mkdir ~/.vimswap
-    mkdir ~/.vimviews
+    ln -s ~/config/vimrc ~/.vimrc ln -s ~/config/gvimrc ~/.gvimrc
+    mkdir ~/.vimbackup mkdir ~/.vimswap mkdir ~/.vimviews
 
-Plugins are managed using [vundle](https://github.com/gmarik/vundle). Just run
-the following to install vundle and download all the plugins. The first time
-you run the BundleInstall it will complain about not being able to find the
-Solarized theme (which it's about to install) but you can safely ignore it.
+Plugins are managed
+using[vundle](https://github.com/gmarik/vundle). Just run the
+following to install vundle and download all the plugins. The first
+time you run the BundleInstall it will complain about not being able
+to find the Solarized theme (which it's about to install) but you can
+safely ignore it.
 
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim +BundleInstall +qall
@@ -54,5 +48,5 @@ in your home directory:
 
     git clone git://github.com/karlkedrovsky/oh-my-zsh.git ~/oh-my-zsh
 
-My .zshrc file is already set up to use this but if you want to use your own
-just follow the instructions in the oh-my-zsh README file.
+My .zshrc file is already set up to use this but if you want to use
+your own just follow the instructions in the oh-my-zsh README file.
