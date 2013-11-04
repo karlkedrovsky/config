@@ -19,6 +19,18 @@ Just symlink the emacs.d directory.
 The first time emacs is run on the machine the packages specified in
 the init.el file will be installed.
 
+Yasnippits for Drupal are from Mike Smith and are managed via a git
+subtree. To add the project run the following:
+
+    cd ~/config
+    git subtree add --prefix emacs.d/drupal-yasnippet git@github.com:vml-msmith/drupal-yasnippet.git master --squash
+
+To update it run:
+
+    cd ~/config
+    git subtree pull --prefix emacs.d/drupal-yasnippet git@github.com:vml-msmith/drupal-yasnippet.git master --squash
+
+
 Vim Config
 ==========
 
