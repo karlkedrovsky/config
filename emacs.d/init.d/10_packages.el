@@ -23,7 +23,8 @@
                       puppet-mode
                       org
                       org-magit
-                      org-jekyll))
+                      org-jekyll
+                      edit-server))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
