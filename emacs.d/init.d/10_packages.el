@@ -24,7 +24,11 @@
                       org
                       org-magit
                       org-jekyll
-                      edit-server))
+                      edit-server
+                      auto-complete
+                      ag
+                      enh-ruby-mode
+                      robe))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))

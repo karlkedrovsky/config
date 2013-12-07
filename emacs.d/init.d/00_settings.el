@@ -25,3 +25,6 @@
 
 ; Save the buffers
 (desktop-save-mode t)
+
+; Tab always indents or completes
+(setq tab-always-indent 'complete)

@@ -2,3 +2,4 @@
 vim/bundle/vimwiki/doc/tags
 vim/.netrwhist
 drush/cache
+emacs.d/ac-comphist.dat

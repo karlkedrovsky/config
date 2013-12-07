@@ -6,7 +6,10 @@ ZSH=$HOME/oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="candy"
-ZSH_THEME="karl"
+#if [ -n "$INSIDE_EMACS" ]; then
+#  export TERM="eterm-color"
+#fi
+export ZSH_THEME="karl"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -81,6 +84,7 @@ if [[ -x /usr/bin/keychain && -e ~/.ssh/id_dsa ]]; then
 fi
 
 # RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+   source "$HOME/.rvm/scripts/rvm"
+   PATH=$PATH:$HOME/.rvm/bin
+fi
