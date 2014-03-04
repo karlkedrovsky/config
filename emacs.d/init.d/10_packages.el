@@ -28,7 +28,8 @@
                       auto-complete
                       ag
                       robe
-                      ace-jump-mode))
+                      ace-jump-mode
+                      erc))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
