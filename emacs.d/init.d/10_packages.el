@@ -29,7 +29,9 @@
                       ag
                       robe
                       ace-jump-mode
-                      erc))
+                      erc
+                      emmet-mode
+                      lorem-ipsum))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
