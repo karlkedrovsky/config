@@ -5,7 +5,7 @@
 (erc :server "irc.geekshed.net" :port 6667 :nick "karlkedrovsky")
 
 (setq erc-autojoin-channels-alist
-      '(("freenode.net" "#drupalcorn" "#drupalkc")))
+      '(("freenode.net" "#drupalcorn" "#drupalkc" "#kcruby")))
 ;;        ("geekshed.net" "#jupiterbroadcasting")
 
 ;; Growl integration
@@ -13,7 +13,7 @@
 ;; (when (string= system-type "darwin")
 ;;   (progn
 ;;     (defvar growlnotify-command (executable-find "growlnotify") "The path to growlnotify")
-;; 
+;;
 ;;     (defun growl (title message)
 ;;       "Shows a message through the growl notification system using
 ;;  `growllnotify-command` as the program."
@@ -27,7 +27,7 @@
 ;;           (process-send-string process "\n")
 ;;           (process-send-eof process)))
 ;;       t)
-;; 
+;;
 ;;     (defun my-erc-hook (match-type nick message)
 ;;       "Shows a growl notification, when user's nick was mentioned. If the buffer is currently not visible, makes it sticky."
 ;;       (unless (posix-string-match "^\\** *Users on #" message)
@@ -35,5 +35,5 @@
 ;;          (concat "ERC: name mentioned on: " (buffer-name (current-buffer)))
 ;;          message
 ;;          )))
-;; 
+;;
 ;;     (add-hook 'erc-text-matched-hook 'my-erc-hook)))

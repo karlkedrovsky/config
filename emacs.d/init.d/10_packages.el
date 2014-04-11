@@ -31,7 +31,9 @@
                       ace-jump-mode
                       erc
                       emmet-mode
-                      lorem-ipsum))
+                      lorem-ipsum
+                      jade-mode
+                      handlebars-mode))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
