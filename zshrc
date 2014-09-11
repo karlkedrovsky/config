@@ -38,6 +38,7 @@ if [[ $platform == 'Darwin' ]]; then
   export PATH=$HOME/bin:/usr/local/bin:$PATH
   alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
   alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
+  alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw -s /tmp/emacs$UID/server"
 else
   export PATH=$HOME/bin:$PATH
 fi
