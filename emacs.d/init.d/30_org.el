@@ -10,3 +10,5 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 (global-set-key "\C-cc" 'org-capture)
+
+(add-hook 'org-mode-hook (lambda () (setq visual-line-mode t)))

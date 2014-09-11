@@ -1,1 +1,1 @@
-(add-hook 'clojure-mode-hook    'enable-paredit-mode)
+(add-hook 'clojure-mode-hook 'paredit-mode)

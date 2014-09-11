@@ -51,6 +51,7 @@ export LC_CYTPE=$LANG
 
 # aliases
 alias ctagsdrupal='ctags -e --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse'
+alias mg='mg -n'
 alias -s txt=vim
 alias -s php=vim
 

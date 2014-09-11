@@ -1,11 +1,11 @@
-(require 'erc-join)
-(erc-autojoin-mode t)
+;(require 'erc-join)
+;(erc-autojoin-mode t)
 
-(erc :server "irc.freenode.net" :port 6667 :nick "karlkedrovsky")
-(erc :server "irc.geekshed.net" :port 6667 :nick "karlkedrovsky")
+;(erc :server "irc.freenode.net" :port 6667 :nick "karlkedrovsky")
+;(erc :server "irc.geekshed.net" :port 6667 :nick "karlkedrovsky")
 
-(setq erc-autojoin-channels-alist
-      '(("freenode.net" "#drupalcorn" "#drupalkc" "#kcruby")))
+;(setq erc-autojoin-channels-alist
+;      '(("freenode.net" "#drupalcorn" "#drupalkc" "#kcruby")))
 ;;        ("geekshed.net" "#jupiterbroadcasting")
 
 ;; Growl integration
