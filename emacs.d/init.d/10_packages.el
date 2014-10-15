@@ -32,7 +32,9 @@
                       handlebars-mode
                       puppet-mode
                       multiple-cursors
-                      feature-mode))
+                      feature-mode
+                      js2-mode
+                      js-comint))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
