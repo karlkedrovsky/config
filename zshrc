@@ -38,6 +38,7 @@ if [[ $platform == 'Darwin' ]]; then
   export PATH=$HOME/bin:/usr/local/bin:$PATH
   alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
   alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
+  alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw -s /tmp/emacs$UID/server"
 else
   export PATH=$HOME/bin:$PATH
 fi
@@ -51,6 +52,7 @@ export LC_CYTPE=$LANG
 
 # aliases
 alias ctagsdrupal='ctags -e --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse'
+alias mg='mg -n'
 alias -s txt=vim
 alias -s php=vim
 

@@ -7,23 +7,19 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 (defvar my-packages '(clojure-mode
+                      paredit
                       cider
 		      expand-region
 		      magit
 		      markdown-mode
                       cl-lib
 		      php-mode
-		      slime
 		      yasnippet
-		      paredit
                       web-mode
                       color-theme
                       git-gutter
                       powerline
-                      puppet-mode
                       org
-                      org-magit
-                      org-jekyll
                       edit-server
                       auto-complete
                       ag
@@ -33,7 +29,12 @@
                       emmet-mode
                       lorem-ipsum
                       jade-mode
-                      handlebars-mode))
+                      handlebars-mode
+                      puppet-mode
+                      multiple-cursors
+                      feature-mode
+                      js2-mode
+                      js-comint))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
