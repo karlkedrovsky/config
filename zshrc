@@ -83,6 +83,9 @@ fi
 if [[ -x /usr/bin/keychain && -e ~/.ssh/id_dsa ]]; then
     /usr/bin/keychain -q ~/.ssh/id_dsa
     /usr/bin/keychain -q ~/.ssh/id_rsa
+    if [[ -e ~/.ssh/id_rsa_vml ]]; then
+        /usr/bin/keychain -q ~/.ssh/id_rsa_vml
+    fi
     source ~/.keychain/`uname -n`-sh >/dev/null
 fi
 
