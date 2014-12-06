@@ -39,8 +39,9 @@ if [[ $platform == 'Darwin' ]]; then
   alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
   alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
   alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw -s /tmp/emacs$UID/server"
-else
-  export PATH=$HOME/bin:$PATH
+  export DOCKER_TLS_VERIFY=1
+  export DOCKER_HOST=tcp://192.168.59.103:2376
+  export DOCKER_CERT_PATH=/Users/kkedrovsky/.boot2docker/certs/boot2docker-vm  export PATH=$HOME/bin:$PATH
 fi
 unsetopt beep
 # bindkey -v
@@ -82,6 +83,9 @@ fi
 if [[ -x /usr/bin/keychain && -e ~/.ssh/id_dsa ]]; then
     /usr/bin/keychain -q ~/.ssh/id_dsa
     /usr/bin/keychain -q ~/.ssh/id_rsa
+    if [[ -e ~/.ssh/id_rsa_vml ]]; then
+        /usr/bin/keychain -q ~/.ssh/id_rsa_vml
+    fi
     source ~/.keychain/`uname -n`-sh >/dev/null
 fi
 
