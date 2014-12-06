@@ -13,7 +13,7 @@
 
 (add-hook 'org-mode-hook (lambda () (setq visual-line-mode t)))
 
-(require 'org-publish)
+(require 'ox-publish)
 (setq org-publish-project-alist
       '(
         ("org-notes"

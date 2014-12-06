@@ -34,7 +34,8 @@
                       multiple-cursors
                       feature-mode
                       js2-mode
-                      js-comint))
+                      js-comint
+                      gotham-theme))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
