@@ -12,8 +12,8 @@
 ; start with empty scratch buffer
 (setq initial-scratch-message nil)
 
-; Add top level emacs.d directory to load path
-(add-to-list 'load-path "~/.emacs.d")
+; Add custom elisp directory
+(add-to-list 'load-path "~/.emacs.d/elisp")
 
 ; Add paths exec-path on the mac
 (when (string= system-type "darwin")

@@ -5,3 +5,5 @@
 
 ; Tomorrow
 (load-theme 'tomorrow-night-eighties t)
+
+(load-theme 'gotham t)
