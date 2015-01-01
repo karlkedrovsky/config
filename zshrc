@@ -92,7 +92,12 @@ fi
 # RVM
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
    source "$HOME/.rvm/scripts/rvm"
-   PATH=$PATH:$HOME/.rvm/bin
+   export PATH=$PATH:$HOME/.rvm/bin
+fi
+
+# Composer
+if [[ -s "$HOME/.composer/vendor/bin" ]]; then
+   export PATH=$PATH:$HOME/.composer/vendor/bin
 fi
 
 unset GREP_OPTIONS
