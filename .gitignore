@@ -5,8 +5,8 @@ vim/bundle/vimwiki/doc/tags
 vim/.netrwhist
 drush/cache
 drush/cloudapi.acquia.com.pem
-drush/pantheon.aliases.drush.php
-drush/hftc.aliases.drush.php
+drush/pantheon.aliases.drushrc.php
+drush/hftc.aliases.drushrc.php
 drush/ssiq.aliases.drushrc.php
 drush/suddenlink.aliases.drushrc.php
 drush/whitecase.aliases.drushrc.php
