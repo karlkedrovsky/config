@@ -5,6 +5,7 @@ vim/bundle/vimwiki/doc/tags
 vim/.netrwhist
 drush/cache
 drush/cloudapi.acquia.com.pem
+drush/pantheon.aliases.drush.php
 drush/hftc.aliases.drush.php
 drush/ssiq.aliases.drushrc.php
 drush/suddenlink.aliases.drushrc.php
