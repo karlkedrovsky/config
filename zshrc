@@ -80,14 +80,16 @@ if [[ $IN_TRAMP_MODE == "t" ]]; then
 fi
 
 # Keychain
-if [[ -x /usr/bin/keychain && -e ~/.ssh/id_dsa ]]; then
-    /usr/bin/keychain -q ~/.ssh/id_dsa
-    /usr/bin/keychain -q ~/.ssh/id_rsa
-    if [[ -e ~/.ssh/id_rsa_vml ]]; then
-        /usr/bin/keychain -q ~/.ssh/id_rsa_vml
+if [[ -z $(pidof ssh-agent) && -z $(pidof gpg-agent) ]]; then
+    if [[ -x /usr/bin/keychain && -e ~/.ssh/id_dsa ]]; then
+        /usr/bin/keychain ~/.ssh/id_dsa
+        /usr/bin/keychain ~/.ssh/id_rsa
+        if [[ -e ~/.ssh/id_rsa_vml ]]; then
+            /usr/bin/keychain -q ~/.ssh/id_rsa_vml
+        fi
+        source ~/.keychain/`uname -n`-sh >/dev/null
     fi
-    source ~/.keychain/`uname -n`-sh >/dev/null
-fi
+fi  
 
 # RVM
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
