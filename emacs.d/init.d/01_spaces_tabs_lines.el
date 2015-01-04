@@ -10,3 +10,8 @@
 ; don't wrap lines by default
 (setq-default truncate-lines 1)
 
+; scroll one line at a time
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+(setq mouse-wheel-progressive-speed nil)
+(setq mouse-wheel-follow-mouse 't)
+(setq scroll-step 1)

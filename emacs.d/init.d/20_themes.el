@@ -4,6 +4,9 @@
 ; (load-theme 'solarized-dark t)
 
 ; Tomorrow
-(load-theme 'tomorrow-night-eighties t)
+; (load-theme 'tomorrow-night-eighties t)
+(load-theme 'tomorrow-night t)
 
-(load-theme 'gotham t)
+; Gotham
+; (load-theme 'gotham t)
+
