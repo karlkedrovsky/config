@@ -80,7 +80,7 @@ if [[ $IN_TRAMP_MODE == "t" ]]; then
 fi
 
 # Keychain
-if [[ -z $(pidof ssh-agent) && -z $(pidof gpg-agent) ]]; then
+if [[ $platform == 'Linux' && -z $(pidof ssh-agent) && -z $(pidof gpg-agent) ]]; then
     if [[ -x /usr/bin/keychain && -e ~/.ssh/id_dsa ]]; then
         /usr/bin/keychain ~/.ssh/id_dsa
         /usr/bin/keychain ~/.ssh/id_rsa
@@ -89,7 +89,7 @@ if [[ -z $(pidof ssh-agent) && -z $(pidof gpg-agent) ]]; then
         fi
         source ~/.keychain/`uname -n`-sh >/dev/null
     fi
-fi  
+fi
 
 # RVM
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
