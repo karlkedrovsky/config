@@ -35,7 +35,8 @@
                       feature-mode
                       js2-mode
                       js-comint
-                      gotham-theme))
+                      gotham-theme
+                      helm))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
