@@ -1,6 +1,6 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (if (string= system-type "darwin")
-    (setq explicit-shell-file-name "/usr/local/bin/zsh"))
+    (setq explicit-shell-file-name "/bin/zsh"))
 (setq shell-file-name "zsh")
 (setq explicit-bash.exe-args '("--login"))
 (setenv "SHELL" shell-file-name)
