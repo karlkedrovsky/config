@@ -39,6 +39,7 @@ if [[ $platform == 'Darwin' ]]; then
   alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
   alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
   alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw -s /tmp/emacs$UID/server"
+  alias sws="python -m SimpleHTTPServer 8000"
   export DOCKER_TLS_VERIFY=1
   export DOCKER_HOST=tcp://192.168.59.103:2376
   export DOCKER_CERT_PATH=/Users/kkedrovsky/.boot2docker/certs/boot2docker-vm  export PATH=$HOME/bin:$PATH
