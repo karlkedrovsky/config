@@ -38,6 +38,7 @@
                       gotham-theme
                       helm
                       projectile
+                      helm-projectile
                       yaml-mode))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
