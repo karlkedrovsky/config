@@ -4,4 +4,4 @@
 ;(defadvice desktop-kill(before clear-power-line-cache () activate)
 ;  (set-frame-parameter nil 'powerline-cache nil))
 ;
-;(powerline-default-theme)
+(powerline-default-theme)

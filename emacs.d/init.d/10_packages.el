@@ -36,7 +36,9 @@
                       js2-mode
                       js-comint
                       gotham-theme
-                      helm))
+                      helm
+                      projectile
+                      yaml-mode))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))

@@ -1,6 +1,6 @@
 ;;(set-default-font "xft:Bitstream Vera Sans Mono-8")
-(when (not (string= system-type "darwin"))
+(if (string= system-type "darwin")
+    (set-default-font "-*-Menlo-normal-normal-normal-*-13-*-*-*-m-0-iso10646-1")
   (set-face-attribute 'default nil :font "Droid Sans Mono-10")
   (set-default-font "Droid Sans Mono-10")
   (setq default-frame-alist '((font . "Droid Sans Mono-10"))))
-
