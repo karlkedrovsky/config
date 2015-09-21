@@ -4,13 +4,8 @@
 vim/bundle/vimwiki/doc/tags
 vim/.netrwhist
 drush/cache
+drush/*.aliases.drushrc.php
 drush/cloudapi.acquia.com.pem
-drush/pantheon.aliases.drushrc.php
-drush/hftc.aliases.drushrc.php
-drush/ssiq.aliases.drushrc.php
-drush/suddenlink.aliases.drushrc.php
-drush/whitecase.aliases.drushrc.php
-drush/xaxis.aliases.drushrc.php
 .emacs.desktop
 .emacs.desktop.lock
 emacs.d/ac-comphist.dat
