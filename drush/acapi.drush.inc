@@ -1002,7 +1002,7 @@ function acapi_get_site_args($site_required = TRUE) {
     if ($site_required) {
       $missing = str_replace(':', 'ac-', implode(', ', array_keys($missing)));
       $error = dt(
-        'Alias file is missing Acquia Cloud information: !missing. Be sure to special a complete Acquia Cloud alias name, such as @mysite.dev.',
+        'Alias file is missing Acquia Cloud information: !missing. Be sure to specify a complete Acquia Cloud alias name, such as @mysite.dev.',
         array('!missing' => $missing)
       );
       drush_set_error('ACAPI_SITE_REQUIRED', $error);
