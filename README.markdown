@@ -14,7 +14,7 @@ Emacs Config
 
 Just symlink the emacs.d directory.
 
-    ln -s ~/config/emacs.d ~/emacs.d
+    ln -s ~/config/emacs.d ~/.emacs.d
 
 The first time emacs is run on the machine the packages specified in
 the init.el file will be installed.
