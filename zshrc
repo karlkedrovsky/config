@@ -57,6 +57,8 @@ alias ctagsdrupal='ctags -e --langmap=php:.engine.inc.module.theme.install.php -
 alias mg='mg -n'
 alias -s txt=vim
 alias -s php=vim
+alias docker-node='docker run --rm -it -v $(pwd):/work -w /work node:latest'
+alias docker-node-grunt='docker run --rm -it -v $(pwd):/work -w /work node:latest ./node_modules/.bin/grunt'
 
 # colors
 if [[ $TERM != 'linux' && $TERM != 'dumb' ]]; then
