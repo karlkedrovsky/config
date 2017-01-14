@@ -105,15 +105,4 @@ if [[ -s "$HOME/.composer/vendor/bin" ]]; then
    export PATH=$PATH:$HOME/.composer/vendor/bin
 fi
 
-# Drush
-if [ -f "/home/vagrant/.drush/drush.bashrc" ] ; then
-  source /home/vagrant/.drush/drush.bashrc
-fi
-if [ -f "/home/vagrant/.drush/drush.complete.sh" ] ; then
-  source /home/vagrant/.drush/drush.complete.sh
-fi
-if [ -f "/home/vagrant/.drush/drush.prompt.sh" ] ; then
-  source /home/vagrant/.drush/drush.prompt.sh
-fi
-
 unset GREP_OPTIONS
