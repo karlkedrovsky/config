@@ -84,13 +84,17 @@ fi
 
 # Keychain
 if [[ $platform == 'Linux' && -z $(pidof ssh-agent) && -z $(pidof gpg-agent) ]]; then
-    if [[ -x /usr/bin/keychain && -e ~/.ssh/id_dsa ]]; then
-        /usr/bin/keychain ~/.ssh/id_dsa
-        /usr/bin/keychain ~/.ssh/id_rsa
+    if [[ -x /usr/bin/keychain ]]; then
+        if [[ -e ~/.ssh/id_rsa ]]; then
+            /usr/bin/keychain ~/.ssh/id_rsa
+        fi
         if [[ -e ~/.ssh/id_rsa_vml ]]; then
             /usr/bin/keychain -q ~/.ssh/id_rsa_vml
         fi
-        source ~/.keychain/`uname -n`-sh >/dev/null
+        KEYCHAIN_FILE=~/.keychain/`uname -n`-sh
+        if [[ -e $KEYCHAIN_FILE ]]; then
+            source $KEYCHAIN_FILE >/dev/null
+        fi
     fi
 fi
 
