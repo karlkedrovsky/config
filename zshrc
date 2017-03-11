@@ -59,6 +59,8 @@ alias -s txt=vim
 alias -s php=vim
 alias docker-node='docker run --rm -it -v $(pwd):/work -w /work node:latest'
 alias docker-node-grunt='docker run --rm -it -v $(pwd):/work -w /work node:latest ./node_modules/.bin/grunt'
+alias dcomposer='docker run -it -v $(pwd):/work -w /work composer/composer:alpine'
+alias dnode='docker run -it -v $(pwd):/work -w /work node'
 
 # colors
 if [[ $TERM != 'linux' && $TERM != 'dumb' ]]; then

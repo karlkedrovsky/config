@@ -13,3 +13,4 @@
 (if (file-exists-p kdk-init-dir)
     (dolist (file (directory-files kdk-init-dir t "\\.el$"))
       (load file)))
+(put 'upcase-region 'disabled nil)
