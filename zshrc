@@ -71,6 +71,11 @@ if [[ $TERM != 'linux' && $TERM != 'dumb' ]]; then
   fi
 fi
 
+# Tilix fix
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+  source /etc/profile.d/vte.sh
+fi
+
 # Fix prompt for tramp connections in emacs
 if [[ $IN_TRAMP_MODE == "t" ]]; then
     #PS1='%(?..[%?])%!:%~%# '
@@ -85,7 +90,7 @@ if [[ $IN_TRAMP_MODE == "t" ]]; then
 fi
 
 # Keychain
-if [[ $platform == 'Linux' && -z $(pidof ssh-agent) && -z $(pidof gpg-agent) ]]; then
+if [[ $platform == 'Linux' && -z $(pidof ssh-agent) ]]; then
     if [[ -x /usr/bin/keychain ]]; then
         if [[ -e ~/.ssh/id_rsa ]]; then
             /usr/bin/keychain ~/.ssh/id_rsa
