@@ -72,7 +72,7 @@ if [[ $TERM != 'linux' && $TERM != 'dumb' ]]; then
 fi
 
 # Tilix fix
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+if [ $VTE_VERSION ]; then
   source /etc/profile.d/vte.sh
 fi
 
