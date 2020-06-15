@@ -11,6 +11,9 @@ ZSH=$HOME/oh-my-zsh
 #fi
 export ZSH_THEME="karl"
 
+# Powerline theme config
+# export ZSH_THEME="powerlevel9k/powerlevel9k"
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -40,9 +43,9 @@ if [[ $platform == 'Darwin' ]]; then
   alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
   alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw -s /tmp/emacs$UID/server"
   alias sws="python -m SimpleHTTPServer 8000"
-  export DOCKER_TLS_VERIFY=1
-  export DOCKER_HOST=tcp://192.168.59.103:2376
-  export DOCKER_CERT_PATH=/Users/kkedrovsky/.boot2docker/certs/boot2docker-vm  export PATH=$HOME/bin:$PATH
+#  export DOCKER_TLS_VERIFY=1
+#  export DOCKER_HOST=tcp://192.168.59.103:2376
+#  export DOCKER_CERT_PATH=/Users/kkedrovsky/.boot2docker/certs/boot2docker-vm  export PATH=$HOME/bin:$PATH
 fi
 unsetopt beep
 # bindkey -v
@@ -51,16 +54,9 @@ setopt auto_pushd
 
 export LANG=en_US.UTF-8
 export LC_CYTPE=$LANG
-
-# aliases
-alias ctagsdrupal='ctags -e --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse'
-alias mg='mg -n'
-alias -s txt=vim
-alias -s php=vim
-alias docker-node='docker run --rm -it -v $(pwd):/work -w /work node:latest'
-alias docker-node-grunt='docker run --rm -it -v $(pwd):/work -w /work node:latest ./node_modules/.bin/grunt'
-alias dcomposer='docker run -it -v $(pwd):/work -w /work composer/composer:alpine'
-alias dnode='docker run -it -v $(pwd):/work -w /work node'
+# user and group ids are initially/mostly for docker builds
+export USER_ID=`id -u`
+export GROUP_ID=`id -g`
 
 # colors
 if [[ $TERM != 'linux' && $TERM != 'dumb' ]]; then
@@ -93,6 +89,9 @@ if [[ $platform == 'Linux' && -z $(pidof ssh-agent) && -z $(pidof gpg-agent) ]];
         if [[ -e ~/.ssh/id_rsa_vml ]]; then
             /usr/bin/keychain -q ~/.ssh/id_rsa_vml
         fi
+        if [[ -e ~/.ssh/id_rsa_vmlyr ]]; then
+            /usr/bin/keychain -q ~/.ssh/id_rsa_vmlyr
+        fi
         KEYCHAIN_FILE=~/.keychain/`uname -n`-sh
         if [[ -e $KEYCHAIN_FILE ]]; then
             source $KEYCHAIN_FILE >/dev/null
@@ -109,6 +108,11 @@ fi
 # Composer
 if [[ -s "$HOME/.composer/vendor/bin" ]]; then
    export PATH=$PATH:$HOME/.composer/vendor/bin
+fi
+
+# pyenv (mostly for mac)
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
 fi
 
 unset GREP_OPTIONS

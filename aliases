@@ -1,4 +1,24 @@
 # colors for ls, etc.
 alias ls="ls -G"
 alias ll="ls -Gl"
-alias drupalctags="ctags --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse"
+
+alias ctagsdrupal='ctags -e --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse'
+alias mg='mg -n'
+alias -s txt=vim
+alias -s php=vim
+
+# docker
+alias dcr='docker-compose run'
+alias docker-node='docker run --rm -it -v $(pwd):/work -w /work node:latest'
+alias docker-node-grunt='docker run --rm -it -v $(pwd):/work -w /work node:latest ./node_modules/.bin/grunt'
+alias dcomposer='docker run -it -v $(pwd):/work -w /work composer:latest'
+alias dnode='docker run -it -v $(pwd):/work -w /work node'
+alias dphp='docker run -it -v $(pwd):/work -w /work php:latest'
+alias dvue='docker run -it -v $(pwd):/work -w /work -p 3000:3000 vue-cli'
+alias dgridsome='docker run -it -v $(pwd):/work -w /work -p 8080:8080 gridsome'
+alias dsass='docker run -it -v $(pwd):/work -w /work -p 3000:3000 sass'
+alias dstylemark='docker run -it -v $(pwd):/work -w /work -p 3000:3000 stylemark'
+alias dwebpack='docker run -it -v $(pwd):/work -w /work -p 3000:3000 webpack'
+alias delixerdev='docker run -it -v $(pwd):/work -w /work -p 4000:4000 elixirdev'
+alias dp66='docker run -it -v $(pwd):/work -p 8080:8080 -w /work node'
+
