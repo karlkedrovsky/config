@@ -35,6 +35,10 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+if [[ -f $HOME/.aliases ]]; then
+  source $HOME/.aliases
+fi
+
 # Customize to your needs...
 platform=`uname`
 if [[ $platform == 'Darwin' ]]; then
