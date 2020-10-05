@@ -9,6 +9,18 @@ directory.
 
     git clone git://gihub.com/karlkedrovsky/config.git ~/config
 
+Dot files in the home directory are meant to be symlinks to file in ~/config. These are the files I'm currently using.
+
+    ln -s ~/config/zshrc ~/.zshrc
+    ln -s ~/config/Xresources ~/.Xresources
+    ln -s ~/config/bash_profile ~/.bash_profile
+    ln -s ~/config/bashrc ~/.bashrc
+    ln -s ~/config/.aliases ~/aliases
+    ln -s ~/config/config/bspwm ~/.config/bspwm
+    ln -s ~/config/config/polybar ~/.config/polybar
+    ln -s ~/config/config/sxhkd ~/.config/sxhkd
+    ln -s ~/config/config/termite ~/.config/termite
+
 Emacs Config
 ============
 

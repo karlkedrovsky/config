@@ -1,3 +1,8 @@
+# Powerlevel10k instant prompt.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/oh-my-zsh
 
@@ -9,7 +14,8 @@ ZSH=$HOME/oh-my-zsh
 #if [ -n "$INSIDE_EMACS" ]; then
 #  export TERM="eterm-color"
 #fi
-export ZSH_THEME="karl"
+#export ZSH_THEME="karl"
+export ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -89,6 +95,11 @@ if [[ $IN_TRAMP_MODE == "t" ]]; then
     #unfunction preexec
 fi
 
+# Add bin path used by pip
+if [[ -d "$HOME/.local/bin" ]]; then
+    export PATH=$HOME/.local/bin:$PATH
+fi
+
 # Keychain
 if [[ $platform == 'Linux' && -z $(pidof ssh-agent) ]]; then
     if [[ -x /usr/bin/keychain ]]; then
@@ -117,3 +128,9 @@ if [[ -s "$HOME/.composer/vendor/bin" ]]; then
 fi
 
 unset GREP_OPTIONS
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Fix the indentation of the right prompt when using Powerlevel10k
+export ZLE_RPROMPT_INDENT=0
