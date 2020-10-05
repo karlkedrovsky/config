@@ -15,7 +15,8 @@ Dot files in the home directory are meant to be symlinks to file in ~/config. Th
     ln -s ~/config/Xresources ~/.Xresources
     ln -s ~/config/bash_profile ~/.bash_profile
     ln -s ~/config/bashrc ~/.bashrc
-    ln -s ~/config/.aliases ~/aliases
+    ln -s ~/config/aliases ~/.aliases
+    ln -s ~/config/p10k.zsh ~/.p10k.zsh
     ln -s ~/config/config/bspwm ~/.config/bspwm
     ln -s ~/config/config/polybar ~/.config/polybar
     ln -s ~/config/config/sxhkd ~/.config/sxhkd
@@ -67,11 +68,13 @@ Zsh Config
 
 For my zsh config I'm using Robby Russell's
 [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework with
-my own theme file. To set it up just clone the repository from github
+Powerlevel10k. To set it up just clone the repository from github
 in your home directory:
 
     git clone git://github.com/robbyrussell/oh-my-zsh
     cp config/karl.zsh-theme oh-my-zsh/themes
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git
+    ln -s ~/powerlevel10k ~/oh-my-zsh/themes
 
 My .zshrc file is already set up to use this but if you want to use
 your own just follow the instructions in the oh-my-zsh README file.
