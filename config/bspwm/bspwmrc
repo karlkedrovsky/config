@@ -14,6 +14,9 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+# fix for floating emacs
+bspc rule -a Emacs state=tiled
+
 # dracula color theme
 bspc config normal_border_color "#44475a"
 bspc config active_border_color "#bd93f9"

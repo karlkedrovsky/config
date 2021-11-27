@@ -130,6 +130,11 @@ if [[ -s "$HOME/.composer/vendor/bin" ]]; then
    export PATH=$PATH:$HOME/.composer/vendor/bin
 fi
 
+# Home bin
+if [[ -s "$HOME/bin" ]]; then
+   export PATH=$HOME/bin:$PATH
+fi
+
 # pyenv (mostly for mac)
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
