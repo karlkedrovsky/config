@@ -135,6 +135,16 @@ if [[ -s "$HOME/bin" ]]; then
    export PATH=$HOME/bin:$PATH
 fi
 
+# java 11
+if [[ -s "/usr/local/opt/java11/bin" ]]; then
+   export PATH=/usr/local/opt/java11/bin:$PATH
+fi
+
+# node 14
+if [[ -s "/usr/local/opt/node@14/bin" ]]; then
+   export PATH=/usr/local/opt/node@14/bin:$PATH
+fi
+
 # pyenv (mostly for mac)
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
