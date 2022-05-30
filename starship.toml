@@ -1,0 +1,2 @@
+format = "$git_branch$git_status$directory$character"
+

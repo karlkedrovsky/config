@@ -14,8 +14,8 @@ ZSH=$HOME/oh-my-zsh
 #if [ -n "$INSIDE_EMACS" ]; then
 #  export TERM="eterm-color"
 #fi
-#export ZSH_THEME="karl"
-export ZSH_THEME="powerlevel10k/powerlevel10k"
+# export ZSH_THEME="karl"
+# export ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Powerline theme config
 # export ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -153,7 +153,11 @@ fi
 unset GREP_OPTIONS
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Fix the indentation of the right prompt when using Powerlevel10k
-export ZLE_RPROMPT_INDENT=0
+# export ZLE_RPROMPT_INDENT=0
+
+# Starship prompt
+eval "$(starship init zsh)"
+
