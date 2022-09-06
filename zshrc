@@ -141,9 +141,9 @@ if [[ -s "/usr/local/opt/java11/bin" ]]; then
 fi
 
 # node 14
-if [[ -s "/usr/local/opt/node@14/bin" ]]; then
-   export PATH=/usr/local/opt/node@14/bin:$PATH
-fi
+# if [[ -s "/usr/local/opt/node@14/bin" ]]; then
+#    export PATH=/usr/local/opt/node@14/bin:$PATH
+# fi
 
 # pyenv (mostly for mac)
 if command -v pyenv 1>/dev/null 2>&1; then
