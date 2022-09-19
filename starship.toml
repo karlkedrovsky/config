@@ -1,2 +1,6 @@
-format = "$git_branch$git_status$directory$character"
+[hostname]
+ssh_only = false
+ssh_symbol = "<ssh> "
+
+# format = "$username$hostname$git_branch$git_status$directory$character"
 

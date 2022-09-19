@@ -4,8 +4,8 @@ scrolling:
 
 font:
   normal:
-    family: Mononoki Nerd Font
-    size: 12
+    family: Hack
+  size: 10
 
 # Nord colors
 colors:

@@ -1,12 +1,13 @@
 # colors for ls, etc.
-alias ls="ls -G"
-alias ll="ls -Gl"
+alias ls="ls --color"
+alias ll="ls -l --color"
 
 alias ctagsdrupal='ctags -e --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse'
 alias mg='mg -n'
 alias -s txt=vim
 alias -s php=vim
 alias nah='git reset --hard;git clean -df'
+alias vim='nvim'
 
 # docker
 alias dcr='docker-compose run'

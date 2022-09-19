@@ -36,6 +36,8 @@ if [[ -f $HOME/.aliases ]]; then
   source $HOME/.aliases
 fi
 
+export EDITOR=nvim
+
 # Customize to your needs...
 platform=`uname`
 if [[ $platform == 'Darwin' ]]; then
