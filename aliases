@@ -1,6 +1,6 @@
 # colors for ls, etc.
 alias ls="ls --color"
-alias ll="ls -l --color"
+alias ll="ls -lsh --color"
 
 alias ctagsdrupal='ctags -e --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse'
 alias mg='mg -n'
