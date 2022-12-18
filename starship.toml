@@ -2,5 +2,8 @@
 ssh_only = false
 ssh_symbol = "<ssh> "
 
+[aws]
+disabled = true
+
 # format = "$username$hostname$git_branch$git_status$directory$character"
 
