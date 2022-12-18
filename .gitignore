@@ -1,5 +1,6 @@
 *~
 .#*
+__pycache__
 .vim/bundle
 vim/bundle/vimwiki/doc/tags
 vim/.netrwhist
