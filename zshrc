@@ -143,5 +143,8 @@ fi
 unset GREP_OPTIONS
 
 # Starship prompt
-eval "$(starship init zsh)"
-
+if [[ $TTY == /dev/tty[0-9] ]]; then
+  PS1='%n@%m %~ %# '
+else
+  eval "$(starship init zsh)"
+fi
