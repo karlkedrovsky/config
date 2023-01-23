@@ -122,9 +122,11 @@ screens = [
             [
                 widget.Spacer(10),
                 widget.CurrentScreen(
-                    foreground=color_theme[5],
-                    active_text="",
-                    active_color=color_theme[8]
+                    # foreground=color_theme[5],
+                    # active_text="\uf390",
+                    active_color=color_theme[8],
+                    # inactive_text="\uf390",
+                    inactive_color=color_theme[1]
                 ),
                 widget.Spacer(10),
                 widget.CurrentLayout(),
@@ -168,7 +170,9 @@ screens = [
                 ),
                 widget.QuickExit(
                     default_text = "shutdown",
-                    foreground=color_theme[2]),
+                    foreground=color_theme[2]
+                ),
+                widget.Spacer(10),
             ],
             30,
             background=color_theme[0],
@@ -181,10 +185,18 @@ screens = [
             [
                 widget.Spacer(10),
                 widget.CurrentScreen(
-                    foreground=color_theme[5],
-                    active_text="",
-                    active_color=color_theme[8]
+                    # foreground=color_theme[5],
+                    # active_text="\uf390",
+                    active_color=color_theme[8],
+                    # inactive_text="\uf390",
+                    inactive_color=color_theme[1]
                 ),
+                widget.Spacer(bar.STRETCH),
+                widget.Clock(
+                    format="%m/%d/%Y %a %I:%M %p",
+                    foreground=color_theme[2]
+                ),
+                widget.Spacer(10),
             ],
             30,
             background=color_theme[0],
@@ -195,10 +207,18 @@ screens = [
             [
                 widget.Spacer(10),
                 widget.CurrentScreen(
-                    foreground=color_theme[5],
-                    active_text="",
-                    active_color=color_theme[8]
+                    # foreground=color_theme[5],
+                    # active_text="\uf390",
+                    active_color=color_theme[8],
+                    # inactive_text="\uf390",
+                    inactive_color=color_theme[1]
                 ),
+                widget.Spacer(bar.STRETCH),
+                widget.Clock(
+                    format="%m/%d/%Y %a %I:%M %p",
+                    foreground=color_theme[2]
+                ),
+                widget.Spacer(10),
             ],
             30,
             background=color_theme[0],

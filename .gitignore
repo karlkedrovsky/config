@@ -4,6 +4,7 @@ __pycache__
 .vim/bundle
 vim/bundle/vimwiki/doc/tags
 vim/.netrwhist
+.luarc.json
 drush/cache
 drush/*.aliases.drushrc.php
 drush/cloudapi.acquia.com.pem
