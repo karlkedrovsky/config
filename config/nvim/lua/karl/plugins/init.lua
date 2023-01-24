@@ -96,3 +96,18 @@ use({
     end,
 })
 
+use({
+    'neovim/nvim-lspconfig',
+    requires = {
+        'b0o/schemastore.nvim',
+        'folke/lsp-colors.nvim',
+    },
+    config = function()
+        require('karl.plugins.lspconfig')
+    end,
+})
+
+use({
+    'weilbith/nvim-code-action-menu',
+    cmd = 'CodeActionMenu',
+})
