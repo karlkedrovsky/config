@@ -16,7 +16,7 @@ Dot files in the home directory are meant to be symlinks to file in ~/config. Th
     ln -s ~/config/bash_profile ~/.bash_profile
     ln -s ~/config/bashrc ~/.bashrc
     ln -s ~/config/aliases ~/.aliases
-    ln -s ~/config/p10k.zsh ~/.p10k.zsh
+    ln -s ~/config/config/bat ~/.config/bat
     ln -s ~/config/config/bspwm ~/.config/bspwm
     ln -s ~/config/config/polybar ~/.config/polybar
     ln -s ~/config/config/sxhkd ~/.config/sxhkd

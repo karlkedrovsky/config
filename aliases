@@ -1,3 +1,11 @@
+function is_bin_in_path {
+  if [[ -n $ZSH_VERSION ]]; then
+    builtin whence -p "$1" &> /dev/null
+  else  # bash:
+    builtin type -P "$1" &> /dev/null
+  fi
+}
+
 # colors for ls, etc.
 alias ls="ls --color"
 alias ll="ls -lsh --color"
@@ -7,7 +15,13 @@ alias mg='mg -n'
 alias -s txt=vim
 alias -s php=vim
 alias nah='git reset --hard;git clean -df'
-alias vim='nvim'
+if is_bin_in_path nvim; then
+  alias vi='nvim'
+  alias vim='nvim'
+fi
+if is_bin_in_path bat; then
+  alias cat='bat'
+fi
 
 # docker
 alias dcr='docker-compose run'

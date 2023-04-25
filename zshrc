@@ -109,6 +109,11 @@ if [[ $platform == 'Linux' && -z $(pidof ssh-agent) ]]; then
     fi
 fi
 
+# Homebrew
+if [[ -s "/opt/homebrew/bin/brew" ]]; then
+   eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # RVM
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
    source "$HOME/.rvm/scripts/rvm"
