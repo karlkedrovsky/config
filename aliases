@@ -7,8 +7,13 @@ function is_bin_in_path {
 }
 
 # colors for ls, etc.
-alias ls="ls --color"
-alias ll="ls -lsh --color"
+if is_bin_in_path exa; then
+  alias ls="exa"
+  alias ll="exa -l"
+else
+  alias ls="ls --color"
+  alias ll="ls -lsh --color"
+fi
 
 alias ctagsdrupal='ctags -e --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse'
 alias mg='mg -n'

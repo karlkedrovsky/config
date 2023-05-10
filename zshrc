@@ -32,8 +32,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-if [[ -f $HOME/.aliases ]]; then
-  source $HOME/.aliases
+if [[ -s "$HOME/.aliases" ]]; then
+  source "$HOME/.aliases"
 fi
 
 export EDITOR=nvim
@@ -91,6 +91,9 @@ fi
 # Add bin path used by pip
 if [[ -d "$HOME/.local/bin" ]]; then
     export PATH=$HOME/.local/bin:$PATH
+fi
+if [[ -d "$HOME/Library/Python/3.11/bin" ]]; then
+    export PATH=$HOME/Library/Python/3.11/bin:$PATH
 fi
 
 # Keychain
