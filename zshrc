@@ -96,6 +96,11 @@ if [[ -d "$HOME/Library/Python/3.11/bin" ]]; then
     export PATH=$HOME/Library/Python/3.11/bin:$PATH
 fi
 
+# Add rust bits to PATH 
+if [[ -d "$HOME/.cargo/bin" ]]; then
+    export PATH=$HOME/.cargo/bin:$PATH
+fi
+
 # Keychain
 if [[ $platform == 'Linux' && -z $(pidof ssh-agent) ]]; then
     if [[ -x /usr/bin/keychain ]]; then
