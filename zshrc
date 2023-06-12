@@ -104,11 +104,14 @@ fi
 # Keychain
 if [[ $platform == 'Linux' && -z $(pidof ssh-agent) ]]; then
     if [[ -x /usr/bin/keychain ]]; then
+        if [[ -e ~/.ssh/id_rsa ]]; then
+            /usr/bin/keychain ~/.ssh/id_rsa
+        fi
         if [[ -e ~/.ssh/id_ecdsa ]]; then
             /usr/bin/keychain ~/.ssh/id_ecdsa
         fi
-        if [[ -e ~/.ssh/id_rsa_vmlyr ]]; then
-            /usr/bin/keychain -q ~/.ssh/id_rsa_vmlyr
+        if [[ -e ~/.ssh/id_rsa_burnsmcd ]]; then
+            /usr/bin/keychain -q ~/.ssh/id_rsa_burnsmcd
         fi
         KEYCHAIN_FILE=~/.keychain/`uname -n`-sh
         if [[ -e $KEYCHAIN_FILE ]]; then
