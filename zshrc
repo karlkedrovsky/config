@@ -32,10 +32,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-if [[ -s "$HOME/.aliases" ]]; then
-  source "$HOME/.aliases"
-fi
-
 export EDITOR=nvim
 
 # Customize to your needs...
@@ -162,6 +158,10 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 unset GREP_OPTIONS
+
+if [[ -s "$HOME/.aliases" ]]; then
+  source "$HOME/.aliases"
+fi
 
 # Starship prompt
 if [[ $TTY == /dev/tty[0-9] ]]; then
