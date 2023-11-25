@@ -72,7 +72,7 @@ For my zsh config I'm using Robby Russell's
 Powerlevel10k. To set it up just clone the repository from github
 in your home directory:
 
-    git clone git://github.com/robbyrussell/oh-my-zsh
+    git clone git@github.com/robbyrussell/oh-my-zsh
     cp config/karl.zsh-theme oh-my-zsh/themes
 
 My .zshrc file is already set up to use this but if you want to use
