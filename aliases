@@ -7,9 +7,9 @@ function is_bin_in_path {
 }
 
 # colors for ls, etc.
-if is_bin_in_path exa; then
-  alias ls="exa"
-  alias ll="exa -l"
+if is_bin_in_path eza; then
+  alias ls="eza"
+  alias ll="eza -l"
 else
   alias ls="ls --color"
   alias ll="ls -lsh --color"
