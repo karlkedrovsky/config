@@ -114,6 +114,9 @@ if [[ $platform == 'Linux' && -z $(pidof ssh-agent) ]]; then
         if [[ -e ~/.ssh/id_rsa_burnsmcd ]]; then
             /usr/bin/keychain -q ~/.ssh/id_rsa_burnsmcd
         fi
+        if [[ -e ~/.ssh/id_rsa_proxmox ]]; then
+            /usr/bin/keychain -q ~/.ssh/id_rsa_proxmox
+        fi
         KEYCHAIN_FILE=~/.keychain/`uname -n`-sh
         if [[ -e $KEYCHAIN_FILE ]]; then
             source $KEYCHAIN_FILE >/dev/null
