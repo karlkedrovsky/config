@@ -1,58 +1,98 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/oh-my-zsh
+# Starting point liberated from https://github.com/dreamsofautonomy/zensh/blob/main/.zshrc
+# and https://www.youtube.com/watch?v=ud7YxC33Z3w
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-#ZSH_THEME="candy"
-#if [ -n "$INSIDE_EMACS" ]; then
-#  export TERM="eterm-color"
-#fi
-# export ZSH_THEME="karl"
+function is_bin_in_path {
+    builtin whence -p "$1" &> /dev/null
+}
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# Comment this out to disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
+# Install and init
+if [ ! -d "$ZINIT_HOME" ]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+source "${ZINIT_HOME}/zinit.zsh"
 
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+# Plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
 
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# Snippets
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::kubectx
+zinit snippet OMZP::command-not-found
+zinit snippet OMZP::ssh-agent
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+# Completions
+autoload -Uz compinit && compinit
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+zinit cdreplay -q
 
-source $ZSH/oh-my-zsh.sh
+# Prompt
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
+
+# Keybindings
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+bindkey '^[w' kill-region
+
+# History
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+if is_bin_in_path fzf; then
+    zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+    zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+fi
+
+# Aliases
+alias ls='ls --color'
+if is_bin_in_path nvim; then
+    alias vi='nvim'
+    alias vim='nvim'
+fi
+alias c='clear'
+if is_bin_in_path eza; then
+    alias ls='eza'
+    alias ll='eza -l'
+fi
+if is_bin_in_path bat; then
+    alias cat='bat'
+    alias ll='eza -l'
+fi
+
+# Shell integrations
+if is_bin_in_path fzf; then
+    eval "$(fzf --zsh)"
+fi
+if is_bin_in_path zoxide; then
+    eval "$(zoxide init --cmd cd zsh)"
+fi
 
 export EDITOR=nvim
-
-# Customize to your needs...
-platform=`uname`
-if [[ $platform == 'Darwin' ]]; then
-  export PATH=$HOME/bin:/usr/local/bin:$PATH
-  alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
-  alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
-  alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw -s /tmp/emacs$UID/server"
-  alias sws="python -m SimpleHTTPServer 8000"
-#  export DOCKER_TLS_VERIFY=1
-#  export DOCKER_HOST=tcp://192.168.59.103:2376
-#  export DOCKER_CERT_PATH=/Users/kkedrovsky/.boot2docker/certs/boot2docker-vm  export PATH=$HOME/bin:$PATH
-fi
-unsetopt beep
-# bindkey -v
-# autoload -U promptinit && promptinit
-setopt auto_pushd
-
 export LANG=en_US.UTF-8
 export LC_CYTPE=$LANG
+
 # user and group ids are initially/mostly for docker builds
 export USER_ID=`id -u`
 export GROUP_ID=`id -g`
@@ -66,109 +106,33 @@ if [[ $TERM != 'linux' && $TERM != 'dumb' ]]; then
   fi
 fi
 
-# Tilix fix
-if [ $VTE_VERSION ]; then
-  source /etc/profile.d/vte.sh
+unset GREP_OPTIONS
+unsetopt beep
+setopt auto_pushd
+
+platform=`uname`
+if [[ $platform == 'Darwin' ]]; then
+  alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
+  alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
 fi
 
-# Fix prompt for tramp connections in emacs
-if [[ $IN_TRAMP_MODE == "t" ]]; then
-    #PS1='%(?..[%?])%!:%~%# '
-    PS1='$'
-    # for tramp to not hang, need the following. cf:
-    # http://www.emacswiki.org/emacs/TrampMode
-    unsetopt zle
-    unsetopt prompt_cr
-    unsetopt prompt_subst
-    #unfunction precmd
-    #unfunction preexec
-fi
-
-# Add bin path used by pip
-if [[ -d "$HOME/.local/bin" ]]; then
-    export PATH=$HOME/.local/bin:$PATH
-fi
-if [[ -d "$HOME/Library/Python/3.11/bin" ]]; then
-    export PATH=$HOME/Library/Python/3.11/bin:$PATH
-fi
-
-# Add rust bits to PATH 
-if [[ -d "$HOME/.cargo/bin" ]]; then
-    export PATH=$HOME/.cargo/bin:$PATH
-fi
-
-# Postgres client on mac
-if [[ -d "/opt/homebrew/opt/libpq/bin" ]]; then
-    export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-fi
-
-# Keychain
-if [[ $platform == 'Linux' && -z $(pidof ssh-agent) ]]; then
-    if [[ -x /usr/bin/keychain ]]; then
-        if [[ -e ~/.ssh/id_rsa ]]; then
-            /usr/bin/keychain ~/.ssh/id_rsa
-        fi
-        if [[ -e ~/.ssh/id_ecdsa ]]; then
-            /usr/bin/keychain ~/.ssh/id_ecdsa
-        fi
-        if [[ -e ~/.ssh/id_rsa_burnsmcd ]]; then
-            /usr/bin/keychain -q ~/.ssh/id_rsa_burnsmcd
-        fi
-        if [[ -e ~/.ssh/id_rsa_proxmox ]]; then
-            /usr/bin/keychain -q ~/.ssh/id_rsa_proxmox
-        fi
-        KEYCHAIN_FILE=~/.keychain/`uname -n`-sh
-        if [[ -e $KEYCHAIN_FILE ]]; then
-            source $KEYCHAIN_FILE >/dev/null
-        fi
+# Add directories to PATH as needed
+optional_bin_paths=(
+    "$HOME/bin"
+    "/usr/local/bin"
+    "$HOME/.local/bin"
+    "$HOME/.cargo/bin" #rust
+    "/opt/homebrew/opt/libpq/bin" # postgres on mac
+    "$HOME/.composer/vendor/bin"
+)
+for optional_bin_path in $optional_bin_paths; do
+    if [ -d "$optional_bin_path" ] && [[ ":$PATH:" != *":$optional_bin_path:"* ]]; then
+        PATH="$optional_bin_path${PATH:+":$PATH"}"
     fi
-fi
+done
 
 # Homebrew
 if [[ -s "/opt/homebrew/bin/brew" ]]; then
    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# RVM
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
-   source "$HOME/.rvm/scripts/rvm"
-   export PATH=$PATH:$HOME/.rvm/bin
-fi
-
-# Composer
-if [[ -s "$HOME/.composer/vendor/bin" ]]; then
-   export PATH=$PATH:$HOME/.composer/vendor/bin
-fi
-
-# Home bin
-if [[ -s "$HOME/bin" ]]; then
-   export PATH=$HOME/bin:$PATH
-fi
-
-# java 11
-if [[ -s "/usr/local/opt/java11/bin" ]]; then
-   export PATH=/usr/local/opt/java11/bin:$PATH
-fi
-
-# node 14
-# if [[ -s "/usr/local/opt/node@14/bin" ]]; then
-#    export PATH=/usr/local/opt/node@14/bin:$PATH
-# fi
-
-# pyenv (mostly for mac)
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-unset GREP_OPTIONS
-
-if [[ -s "$HOME/.aliases" ]]; then
-  source "$HOME/.aliases"
-fi
-
-# Starship prompt
-if [[ $TTY == /dev/tty[0-9] ]]; then
-  PS1='%n@%m %~ %# '
-else
-  eval "$(starship init zsh)"
-fi
