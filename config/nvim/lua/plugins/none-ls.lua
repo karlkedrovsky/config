@@ -8,6 +8,7 @@ return {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.prettier,
 				null_ls.builtins.formatting.black,
+				null_ls.builtins.formatting.djlint,
 			},
 			-- https://github.com/nvimtools/none-ls.nvim/wiki/Formatting-on-save
 			on_attach = function(client, bufnr)
