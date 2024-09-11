@@ -34,9 +34,6 @@ autoload -Uz compinit && compinit
 
 zinit cdreplay -q
 
-# Prompt
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
-
 # Keybindings
 bindkey -e
 bindkey '^p' history-search-backward
@@ -122,6 +119,7 @@ optional_bin_paths=(
     "/usr/local/bin"
     "$HOME/.local/bin"
     "$HOME/.cargo/bin" #rust
+    "/opt/homebrew/bin"
     "/opt/homebrew/opt/libpq/bin" # postgres on mac
     "$HOME/.composer/vendor/bin"
 )
@@ -130,6 +128,9 @@ for optional_bin_path in $optional_bin_paths; do
         PATH="$optional_bin_path${PATH:+":$PATH"}"
     fi
 done
+
+# Prompt
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
 
 # Homebrew
 if [[ -s "/opt/homebrew/bin/brew" ]]; then
