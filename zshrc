@@ -62,8 +62,35 @@ if is_bin_in_path fzf; then
     zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 fi
 
+unset GREP_OPTIONS
+unsetopt beep
+setopt auto_pushd
+
+platform=`uname`
+if [[ $platform == 'Darwin' ]]; then
+  alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
+  alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
+fi
+
+# Add directories to PATH as needed
+optional_bin_paths=(
+    "$HOME/bin"
+    "/usr/local/bin"
+    "$HOME/.local/bin"
+    "$HOME/.cargo/bin" #rust
+    "/opt/homebrew/bin"
+    "/opt/homebrew/opt/libpq/bin" # postgres on mac
+    "$HOME/.composer/vendor/bin"
+)
+for optional_bin_path in $optional_bin_paths; do
+    if [ -d "$optional_bin_path" ] && [[ ":$PATH:" != *":$optional_bin_path:"* ]]; then
+        PATH="$optional_bin_path${PATH:+":$PATH"}"
+    fi
+done
+
 # Aliases
 alias ls='ls --color'
+alias ll='ls -al --color'
 if is_bin_in_path nvim; then
     alias vi='nvim'
     alias vim='nvim'
@@ -102,32 +129,6 @@ if [[ $TERM != 'linux' && $TERM != 'dumb' ]]; then
     export TERM='xterm-color'
   fi
 fi
-
-unset GREP_OPTIONS
-unsetopt beep
-setopt auto_pushd
-
-platform=`uname`
-if [[ $platform == 'Darwin' ]]; then
-  alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
-  alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
-fi
-
-# Add directories to PATH as needed
-optional_bin_paths=(
-    "$HOME/bin"
-    "/usr/local/bin"
-    "$HOME/.local/bin"
-    "$HOME/.cargo/bin" #rust
-    "/opt/homebrew/bin"
-    "/opt/homebrew/opt/libpq/bin" # postgres on mac
-    "$HOME/.composer/vendor/bin"
-)
-for optional_bin_path in $optional_bin_paths; do
-    if [ -d "$optional_bin_path" ] && [[ ":$PATH:" != *":$optional_bin_path:"* ]]; then
-        PATH="$optional_bin_path${PATH:+":$PATH"}"
-    fi
-done
 
 # Prompt
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"

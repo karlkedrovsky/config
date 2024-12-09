@@ -24,18 +24,12 @@ final_space = true
     type = 'text'
     style = 'plain'
 
-    [blocks.segments.properties]
-      cache_duration = 'none'
-
   [[blocks.segments]]
     template = ' in '
     foreground = 'p:grey'
     background = 'transparent'
     type = 'text'
     style = 'plain'
-
-    [blocks.segments.properties]
-      cache_duration = 'none'
 
   [[blocks.segments]]
     template = '{{ .Path }}'
@@ -45,7 +39,6 @@ final_space = true
     style = 'plain'
 
     [blocks.segments.properties]
-      cache_duration = 'none'
       style = 'full'
 
   [[blocks.segments]]
@@ -57,7 +50,6 @@ final_space = true
 
     [blocks.segments.properties]
       branch_icon = ''
-      cache_duration = 'none'
       commit_icon = '@'
       fetch_status = true
 
@@ -67,9 +59,6 @@ final_space = true
     background = 'transparent'
     type = 'python'
     style = 'plain'
-
-    [blocks.segments.properties]
-      cache_duration = 'none'
 
 [[blocks]]
   type = 'rprompt'
@@ -83,7 +72,6 @@ final_space = true
     style = 'plain'
 
     [blocks.segments.properties]
-      cache_duration = 'none'
       threshold = 5000
 
 [[blocks]]
@@ -97,6 +85,3 @@ final_space = true
     type = 'text'
     style = 'plain'
     foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}magenta{{end}}']
-
-    [blocks.segments.properties]
-      cache_duration = 'none'
