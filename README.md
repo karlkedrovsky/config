@@ -24,3 +24,9 @@ Dot files in the home directory are meant to be symlinks to file in ~/config. Th
     ln -s ~/config/config/polybar ~/.config/polybar
     ln -s ~/config/config/sxhkd ~/.config/sxhkd
     ln -s ~/config/config/termite ~/.config/termite
+
+# Tmux
+
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    tmux
+    # press `prefix + I` to install plugins
