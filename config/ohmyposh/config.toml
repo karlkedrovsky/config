@@ -18,7 +18,7 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    template = '{{ .HostName }}'
+    template = '{{ .UserName }}@{{ .HostName }}'
     foreground = 'green'
     background = 'transparent'
     type = 'text'
