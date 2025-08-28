@@ -91,11 +91,14 @@ done
 # Aliases
 alias ls='ls --color'
 alias ll='ls -al --color'
+alias c='clear'
+alias uvs='uv sync --freeze'
+alias uvr='uv run --no-sync'
+alias uvrm='uv run --no-sync manage.py'
 if is_bin_in_path nvim; then
     alias vi='nvim'
     alias vim='nvim'
 fi
-alias c='clear'
 if is_bin_in_path eza; then
     alias ls='eza'
     alias ll='eza -l'
@@ -138,3 +141,8 @@ if [[ -s "/opt/homebrew/bin/brew" ]]; then
    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/kkedrovsky/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
