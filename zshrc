@@ -141,8 +141,14 @@ if [[ -s "/opt/homebrew/bin/brew" ]]; then
    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# Fastfetch
+if is_bin_in_path fastfetch; then
+    fastfetch
+fi
+
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/kkedrovsky/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
