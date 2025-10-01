@@ -22,6 +22,7 @@ Dot files in the home directory are meant to be symlinks to file in ~/config. Th
     ln -s ~/config/config/kitty ~/.config/kitty
     ln -s ~/config/config/hypr ~/.config/hypr
 
+    # old files that aren't currently in use
     ln -s ~/config/Xresources ~/.Xresources
     ln -s ~/config/config/bspwm ~/.config/bspwm
     ln -s ~/config/config/polybar ~/.config/polybar
