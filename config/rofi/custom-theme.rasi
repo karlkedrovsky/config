@@ -1,0 +1,31 @@
+@import "catppuccin"
+
+window {
+    location:       north;
+    y-offset:       calc(50% - 360px);
+    width:          720;
+    border-radius:  16px;
+}
+
+mainbox {
+    padding:    12px;
+}
+
+inputbar {
+    border:         2px;
+    border-radius:  16px;
+
+    padding:    8px 16px;
+    spacing:    8px;
+}
+
+listview {
+    margin: 12px 0 0;
+    border: 0;
+}
+
+element {
+    padding: 8px 16px;
+    spacing: 8px;
+    border-radius: 16px;
+  }
